@@ -1,0 +1,513 @@
+[2025-12-05 11:26:17] production.ERROR: SQLSTATE[HY000]: General error: 1 no such table: ec_currencies (Connection: sqlite, SQL: select * from "ec_currencies" order by "order" asc) {"view":{"view":"C:\\laragon\\www\\acureva\\platform\\themes\\shopwise\\views\\404.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-1188223210 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#3358</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1188223210\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","exception":"<pre class=sf-dump id=sf-dump-1411104080 data-indent-pad=\"  \"><span class=sf-dump-note>Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException</span> {<a class=sf-dump-ref>#3357</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">message</span>: \"<span class=sf-dump-str title=\"94 characters\">The route themes/shopwise/plugins/bootstrap/js/bootstrap.bundle.min.js.map could not be found.</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">code</span>: <span class=sf-dump-num>0</span>
+  #<span class=sf-dump-protected title=\"Protected property\">file</span>: \"<span class=\"sf-dump-str sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\AbstractRouteCollection.php
+98 characters\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Routing\\AbstractRouteCollection.php</span></span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">line</span>: <span class=sf-dump-num>45</span>
+  -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\HttpKernel\\Exception\\HttpException`\">statusCode</span>: <span class=sf-dump-num>404</span>
+  -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Symfony\\Component\\HttpKernel\\Exception\\HttpException`\">headers</span>: []
+  <span class=sf-dump-meta>trace</span>: {<samp data-depth=2 class=sf-dump-compact>
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\AbstractRouteCollection.php:45
+Stack level 33.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Routing\\AbstractRouteCollection.php:45</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Routing\\AbstractRouteCollection-&gt;handleMatchedRoute(Request $request, $route)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Routing</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">AbstractRouteCollection-&gt;handleMatchedRoute(Request $request, $route)</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Routing\\AbstractRouteCollection-&gt;handleMatchedRoute(Request $request, $route)\">throw new NotFoundHttpException(sprintf(</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>    &#039;The route %s could not be found.&#039;,</span></code>
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteCollection.php:162
+Stack level 32.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Routing\\RouteCollection.php:162</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Routing\\RouteCollection-&gt;match(Request $request)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Routing</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">RouteCollection-&gt;match(Request $request)</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Routing\\RouteCollection-&gt;match(Request $request)\">    return $this-&gt;handleMatchedRoute($request, $route);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;2}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php:763
+Stack level 31.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Routing\\Router.php:763</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Routing\\Router-&gt;findRoute($request)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Routing</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Router-&gt;findRoute($request)</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Routing\\Router-&gt;findRoute($request)\">$this-&gt;current = $route = $this-&gt;routes-&gt;match($request);</span></code>
+      &#8250; 
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php:750
+Stack level 30.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Routing\\Router.php:750</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Routing\\Router-&gt;dispatchToRoute(Request $request)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Routing</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Router-&gt;dispatchToRoute(Request $request)</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>{</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Routing\\Router-&gt;dispatchToRoute(Request $request)\">    return $this-&gt;runRoute($request, $this-&gt;findRoute($request));</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php:739
+Stack level 29.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Routing\\Router.php:739</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Routing\\Router-&gt;dispatch(Request $request)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Routing</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Router-&gt;dispatch(Request $request)</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Routing\\Router-&gt;dispatch(Request $request)\">    return $this-&gt;dispatchToRoute($request);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php:200
+Stack level 28.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Foundation\\Http\\Kernel.php:200</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Foundation\\Http\\Kernel-&gt;Illuminate\\Foundation\\Http\\{closure}
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Foundation\\Http\\Kernel-&gt;Illuminate\\Foundation\\Http</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">{closure}</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Foundation\\Http\\Kernel-&gt;Illuminate\\Foundation\\Http\\{closure}\">    return $this-&gt;router-&gt;dispatch($request);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>};</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php:169
+Stack level 27.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Pipeline\\Pipeline.php:169</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">{closure}</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>try {</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}\">    return $destination($passable);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>} catch (Throwable $e) {</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\platform\\core\\js-validation\\src\\RemoteValidationMiddleware.php:43
+Stack level 26.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\platform\\core</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\</span><span class=\"sf-dump-ellipsis-tail\">js-validation\\src\\RemoteValidationMiddleware.php:43</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Botble\\JsValidation\\RemoteValidationMiddleware-&gt;handle(Request $request, Closure $next)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Botble\\JsValidation</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">RemoteValidationMiddleware-&gt;handle(Request $request, Closure $next)</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Botble\\JsValidation\\RemoteValidationMiddleware-&gt;handle(Request $request, Closure $next)\">    return $next($request);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php:208
+Stack level 25.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Pipeline\\Pipeline.php:208</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">{closure}</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>$carry = method_exists($pipe, $this-&gt;method)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}\">    ? $pipe-&gt;{$this-&gt;method}(...$parameters)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>    : $pipe(...$parameters);</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;2}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\barryvdh\\laravel-debugbar\\src\\Middleware\\InjectDebugbar.php:59
+Stack level 24.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\barryvdh\\laravel-debugbar\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Middleware\\InjectDebugbar.php:59</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Barryvdh\\Debugbar\\Middleware\\InjectDebugbar-&gt;handle($request, Closure $next)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Barryvdh\\Debugbar\\Middleware</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">InjectDebugbar-&gt;handle($request, Closure $next)</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>if (!$this-&gt;debugbar-&gt;isEnabled() || $this-&gt;inExceptArray($request)) {</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Barryvdh\\Debugbar\\Middleware\\InjectDebugbar-&gt;handle($request, Closure $next)\">    return $next($request);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php:208
+Stack level 23.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Pipeline\\Pipeline.php:208</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">{closure}</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>$carry = method_exists($pipe, $this-&gt;method)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}\">    ? $pipe-&gt;{$this-&gt;method}(...$parameters)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>    : $pipe(...$parameters);</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;2}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php:21
+Stack level 22.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php:21</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest-&gt;handle($request, Closure $next)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Foundation\\Http\\Middleware</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">TransformsRequest-&gt;handle($request, Closure $next)</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest-&gt;handle($request, Closure $next)\">    return $next($request);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php:31
+Stack level 21.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php:31</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull-&gt;handle($request, Closure $next)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Foundation\\Http\\Middleware</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">ConvertEmptyStringsToNull-&gt;handle($request, Closure $next)</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull-&gt;handle($request, Closure $next)\">    return parent::handle($request, $next);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;2}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php:208
+Stack level 20.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Pipeline\\Pipeline.php:208</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">{closure}</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>$carry = method_exists($pipe, $this-&gt;method)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}\">    ? $pipe-&gt;{$this-&gt;method}(...$parameters)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>    : $pipe(...$parameters);</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;2}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php:21
+Stack level 19.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php:21</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest-&gt;handle($request, Closure $next)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Foundation\\Http\\Middleware</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">TransformsRequest-&gt;handle($request, Closure $next)</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest-&gt;handle($request, Closure $next)\">    return $next($request);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php:51
+Stack level 18.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php:51</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Foundation\\Http\\Middleware\\TrimStrings-&gt;handle($request, Closure $next)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Foundation\\Http\\Middleware</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">TrimStrings-&gt;handle($request, Closure $next)</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Foundation\\Http\\Middleware\\TrimStrings-&gt;handle($request, Closure $next)\">    return parent::handle($request, $next);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;2}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php:208
+Stack level 17.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Pipeline\\Pipeline.php:208</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">{closure}</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>$carry = method_exists($pipe, $this-&gt;method)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}\">    ? $pipe-&gt;{$this-&gt;method}(...$parameters)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>    : $pipe(...$parameters);</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;2}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php:27
+Stack level 16.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php:27</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Http\\Middleware\\ValidatePostSize-&gt;handle($request, Closure $next)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Http\\Middleware</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">ValidatePostSize-&gt;handle($request, Closure $next)</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Http\\Middleware\\ValidatePostSize-&gt;handle($request, Closure $next)\">    return $next($request);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php:208
+Stack level 15.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Pipeline\\Pipeline.php:208</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">{closure}</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>$carry = method_exists($pipe, $this-&gt;method)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}\">    ? $pipe-&gt;{$this-&gt;method}(...$parameters)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>    : $pipe(...$parameters);</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;2}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php:109
+Stack level 14.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php:109</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance-&gt;handle($request, Closure $next)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Foundation\\Http\\Middleware</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">PreventRequestsDuringMaintenance-&gt;handle($request, Closure $next)</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance-&gt;handle($request, Closure $next)\">    return $next($request);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php:208
+Stack level 13.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Pipeline\\Pipeline.php:208</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">{closure}</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>$carry = method_exists($pipe, $this-&gt;method)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}\">    ? $pipe-&gt;{$this-&gt;method}(...$parameters)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>    : $pipe(...$parameters);</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;2}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php:48
+Stack level 12.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Http\\Middleware\\HandleCors.php:48</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Http\\Middleware\\HandleCors-&gt;handle($request, Closure $next)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Http\\Middleware</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">HandleCors-&gt;handle($request, Closure $next)</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>if (! $this-&gt;hasMatchingPath($request)) {</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Http\\Middleware\\HandleCors-&gt;handle($request, Closure $next)\">    return $next($request);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php:208
+Stack level 11.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Pipeline\\Pipeline.php:208</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">{closure}</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>$carry = method_exists($pipe, $this-&gt;method)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}\">    ? $pipe-&gt;{$this-&gt;method}(...$parameters)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>    : $pipe(...$parameters);</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;2}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php:58
+Stack level 10.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Http\\Middleware\\TrustProxies.php:58</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Http\\Middleware\\TrustProxies-&gt;handle(Request $request, Closure $next)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Http\\Middleware</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">TrustProxies-&gt;handle(Request $request, Closure $next)</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Http\\Middleware\\TrustProxies-&gt;handle(Request $request, Closure $next)\">    return $next($request);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php:208
+Stack level 9.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Pipeline\\Pipeline.php:208</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">{closure}</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>$carry = method_exists($pipe, $this-&gt;method)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}\">    ? $pipe-&gt;{$this-&gt;method}(...$parameters)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>    : $pipe(...$parameters);</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;2}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php:22
+Stack level 8.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php:22</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks-&gt;handle(Request $request, Closure $next)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Foundation\\Http\\Middleware</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">InvokeDeferredCallbacks-&gt;handle(Request $request, Closure $next)</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>{</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks-&gt;handle(Request $request, Closure $next)\">    return $next($request);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php:208
+Stack level 7.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Pipeline\\Pipeline.php:208</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">{closure}</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>$carry = method_exists($pipe, $this-&gt;method)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}\">    ? $pipe-&gt;{$this-&gt;method}(...$parameters)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>    : $pipe(...$parameters);</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;2}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePathEncoding.php:26
+Stack level 6.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Http\\Middleware\\ValidatePathEncoding.php:26</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Http\\Middleware\\ValidatePathEncoding-&gt;handle(Request $request, Closure $next)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Http\\Middleware</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">ValidatePathEncoding-&gt;handle(Request $request, Closure $next)</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Http\\Middleware\\ValidatePathEncoding-&gt;handle(Request $request, Closure $next)\">    return $next($request);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php:208
+Stack level 5.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Pipeline\\Pipeline.php:208</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">{closure}</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>$carry = method_exists($pipe, $this-&gt;method)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Pipeline\\Pipeline-&gt;Illuminate\\Pipeline\\{closure}\">    ? $pipe-&gt;{$this-&gt;method}(...$parameters)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>    : $pipe(...$parameters);</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;2}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php:126
+Stack level 4.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Pipeline\\Pipeline.php:126</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Pipeline\\Pipeline-&gt;then(Closure $destination)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Pipeline</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Pipeline-&gt;then(Closure $destination)</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>try {</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Pipeline\\Pipeline-&gt;then(Closure $destination)\">    return $pipeline($this-&gt;passable);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>} finally {</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php:175
+Stack level 3.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Foundation\\Http\\Kernel.php:175</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Foundation\\Http\\Kernel-&gt;sendRequestThroughRouter($request)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Foundation\\Http</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Kernel-&gt;sendRequestThroughRouter($request)</span></span> &#8230;
+      &#8250; <code class=\"php\"><span class=sf-dump-default>        -&gt;through($this-&gt;app-&gt;shouldSkipMiddleware() ? [] : $this-&gt;middleware)</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Foundation\\Http\\Kernel-&gt;sendRequestThroughRouter($request)\">        -&gt;then($this-&gt;dispatchToRouter());</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>}</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php:144
+Stack level 2.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva\\vendor</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\laravel\\framework\\</span><span class=\"sf-dump-ellipsis-tail\">src\\Illuminate\\Foundation\\Http\\Kernel.php:144</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Foundation\\Http\\Kernel-&gt;handle($request)
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Foundation\\Http</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Kernel-&gt;handle($request)</span></span> &#8230;
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const title=\"in Illuminate\\Foundation\\Http\\Kernel-&gt;handle($request)\">    $response = $this-&gt;sendRequestThroughRouter($request);</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>} catch (Throwable $e) {</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+    <span class=\"sf-dump-meta sf-dump-ellipsization\" title=\"C:\\laragon\\www\\acureva\\public\\index.php:23
+Stack level 1.\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">C:\\laragon\\www\\acureva</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-path\">\\</span><span class=\"sf-dump-ellipsis-tail\">public\\index.php:23</span></span> {<samp data-depth=3 class=sf-dump-compact>
+      &#8250; 
+      &#8250; <code class=\"php\"><span class=sf-dump-const>$response = $kernel-&gt;handle(</span></code>
+      &#8250; <code class=\"php\"><span class=sf-dump-default>    $request = Request::capture()</span></code>
+      <span class=sf-dump-meta>arguments</span>: { &#8230;1}
+    </samp>}
+  </samp>}
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1411104080\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): SQLSTATE[HY000]: General error: 1 no such table: ec_currencies (Connection: sqlite, SQL: select * from \"ec_currencies\" order by \"order\" asc) at C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:824)
+[stacktrace]
+#0 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(778): Illuminate\\Database\\Connection->runQueryCallback('select * from \"...', Array, Object(Closure))
+#1 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(397): Illuminate\\Database\\Connection->run('select * from \"...', Array, Object(Closure))
+#2 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3188): Illuminate\\Database\\Connection->select('select * from \"...', Array, true)
+#3 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3173): Illuminate\\Database\\Query\\Builder->runSelect()
+#4 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3763): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#5 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3172): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#6 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(872): Illuminate\\Database\\Query\\Builder->get(Array)
+#7 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(854): Illuminate\\Database\\Eloquent\\Builder->getModels(Array)
+#8 C:\\laragon\\www\\acureva\\platform\\core\\base\\src\\Models\\BaseQueryBuilder.php(48): Illuminate\\Database\\Eloquent\\Builder->get(Array)
+#9 C:\\laragon\\www\\acureva\\platform\\plugins\\ecommerce\\src\\Supports\\CurrencySupport.php(107): Botble\\Base\\Models\\BaseQueryBuilder->get()
+#10 C:\\laragon\\www\\acureva\\platform\\plugins\\ecommerce\\src\\Supports\\CurrencySupport.php(41): Botble\\Ecommerce\\Supports\\CurrencySupport->currencies()
+#11 C:\\laragon\\www\\acureva\\platform\\plugins\\ecommerce\\helpers\\currencies.php(141): Botble\\Ecommerce\\Supports\\CurrencySupport->getApplicationCurrency()
+#12 C:\\laragon\\www\\acureva\\platform\\plugins\\ecommerce\\src\\Supports\\EcommerceHelper.php(1655): get_application_currency()
+#13 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(361): Botble\\Ecommerce\\Supports\\EcommerceHelper->registerThemeAssets()
+#14 C:\\laragon\\www\\acureva\\platform\\themes\\shopwise\\config.php(98): Illuminate\\Support\\Facades\\Facade::__callStatic('registerThemeAs...', Array)
+#15 C:\\laragon\\www\\acureva\\platform\\packages\\theme\\src\\Theme.php(347): Illuminate\\Filesystem\\Filesystem::{closure}(Object(Botble\\Theme\\Theme))
+#16 C:\\laragon\\www\\acureva\\platform\\packages\\theme\\src\\Theme.php(910): Botble\\Theme\\Theme->fire('beforeRenderThe...', Object(Botble\\Theme\\Theme))
+#17 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(361): Botble\\Theme\\Theme->fireEventGlobalAssets()
+#18 C:\\laragon\\www\\acureva\\platform\\themes\\shopwise\\views\\404.blade.php(1): Illuminate\\Support\\Facades\\Facade::__callStatic('fireEventGlobal...', Array)
+#19 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#20 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#21 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(57): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#22 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(76): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#23 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#24 C:\\laragon\\www\\acureva\\platform\\packages\\shortcode\\src\\View\\View.php(50): Illuminate\\View\\View->getContents()
+#25 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Botble\\Shortcode\\View\\View->renderContents()
+#26 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(78): Illuminate\\View\\View->render()
+#27 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(34): Illuminate\\Http\\Response->setContent(Object(Botble\\Shortcode\\View\\View))
+#28 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ResponseFactory.php(61): Illuminate\\Http\\Response->__construct(Object(Botble\\Shortcode\\View\\View), 404, Array)
+#29 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ResponseFactory.php(91): Illuminate\\Routing\\ResponseFactory->make(Object(Botble\\Shortcode\\View\\View), 404, Array)
+#30 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(927): Illuminate\\Routing\\ResponseFactory->view('theme.shopwise:...', Array, 404, Array)
+#31 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(848): Illuminate\\Foundation\\Exceptions\\Handler->renderHttpException(Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#32 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(739): Illuminate\\Foundation\\Exceptions\\Handler->prepareResponse(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#33 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(627): Illuminate\\Foundation\\Exceptions\\Handler->renderExceptionResponse(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#34 C:\\laragon\\www\\acureva\\platform\\core\\base\\src\\Exceptions\\Handler.php(118): Illuminate\\Foundation\\Exceptions\\Handler->render(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#35 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(51): Botble\\Base\\Exceptions\\Handler->render(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#36 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Pipeline->handleException(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#37 C:\\laragon\\www\\acureva\\platform\\core\\js-validation\\src\\RemoteValidationMiddleware.php(43): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\JsValidation\\RemoteValidationMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\laragon\\www\\acureva\\vendor\\barryvdh\\laravel-debugbar\\src\\Middleware\\InjectDebugbar.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(109): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#55 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#56 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#57 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePathEncoding.php(26): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#58 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\ValidatePathEncoding->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#59 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#60 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#61 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#62 C:\\laragon\\www\\acureva\\public\\index.php(23): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#63 {main}
+
+[previous exception] [object] (Illuminate\\Database\\QueryException(code: HY000): SQLSTATE[HY000]: General error: 1 no such table: ec_currencies (Connection: sqlite, SQL: select * from \"ec_currencies\" order by \"order\" asc) at C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:824)
+[stacktrace]
+#0 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(778): Illuminate\\Database\\Connection->runQueryCallback('select * from \"...', Array, Object(Closure))
+#1 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(397): Illuminate\\Database\\Connection->run('select * from \"...', Array, Object(Closure))
+#2 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3188): Illuminate\\Database\\Connection->select('select * from \"...', Array, true)
+#3 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3173): Illuminate\\Database\\Query\\Builder->runSelect()
+#4 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3763): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#5 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3172): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#6 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(872): Illuminate\\Database\\Query\\Builder->get(Array)
+#7 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(854): Illuminate\\Database\\Eloquent\\Builder->getModels(Array)
+#8 C:\\laragon\\www\\acureva\\platform\\core\\base\\src\\Models\\BaseQueryBuilder.php(48): Illuminate\\Database\\Eloquent\\Builder->get(Array)
+#9 C:\\laragon\\www\\acureva\\platform\\plugins\\ecommerce\\src\\Supports\\CurrencySupport.php(107): Botble\\Base\\Models\\BaseQueryBuilder->get()
+#10 C:\\laragon\\www\\acureva\\platform\\plugins\\ecommerce\\src\\Supports\\CurrencySupport.php(41): Botble\\Ecommerce\\Supports\\CurrencySupport->currencies()
+#11 C:\\laragon\\www\\acureva\\platform\\plugins\\ecommerce\\helpers\\currencies.php(141): Botble\\Ecommerce\\Supports\\CurrencySupport->getApplicationCurrency()
+#12 C:\\laragon\\www\\acureva\\platform\\plugins\\ecommerce\\src\\Supports\\EcommerceHelper.php(1655): get_application_currency()
+#13 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(361): Botble\\Ecommerce\\Supports\\EcommerceHelper->registerThemeAssets()
+#14 C:\\laragon\\www\\acureva\\platform\\themes\\shopwise\\config.php(98): Illuminate\\Support\\Facades\\Facade::__callStatic('registerThemeAs...', Array)
+#15 C:\\laragon\\www\\acureva\\platform\\packages\\theme\\src\\Theme.php(347): Illuminate\\Filesystem\\Filesystem::{closure}(Object(Botble\\Theme\\Theme))
+#16 C:\\laragon\\www\\acureva\\platform\\packages\\theme\\src\\Theme.php(910): Botble\\Theme\\Theme->fire('beforeRenderThe...', Object(Botble\\Theme\\Theme))
+#17 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(361): Botble\\Theme\\Theme->fireEventGlobalAssets()
+#18 C:\\laragon\\www\\acureva\\storage\\framework\\views\\b80aa36d9eac5fe8cc891996079861b3.php(3): Illuminate\\Support\\Facades\\Facade::__callStatic('fireEventGlobal...', Array)
+#19 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#20 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#21 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(57): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#22 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(76): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#23 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#24 C:\\laragon\\www\\acureva\\platform\\packages\\shortcode\\src\\View\\View.php(50): Illuminate\\View\\View->getContents()
+#25 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Botble\\Shortcode\\View\\View->renderContents()
+#26 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(78): Illuminate\\View\\View->render()
+#27 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(34): Illuminate\\Http\\Response->setContent(Object(Botble\\Shortcode\\View\\View))
+#28 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ResponseFactory.php(61): Illuminate\\Http\\Response->__construct(Object(Botble\\Shortcode\\View\\View), 404, Array)
+#29 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ResponseFactory.php(91): Illuminate\\Routing\\ResponseFactory->make(Object(Botble\\Shortcode\\View\\View), 404, Array)
+#30 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(927): Illuminate\\Routing\\ResponseFactory->view('theme.shopwise:...', Array, 404, Array)
+#31 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(848): Illuminate\\Foundation\\Exceptions\\Handler->renderHttpException(Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#32 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(739): Illuminate\\Foundation\\Exceptions\\Handler->prepareResponse(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#33 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(627): Illuminate\\Foundation\\Exceptions\\Handler->renderExceptionResponse(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#34 C:\\laragon\\www\\acureva\\platform\\core\\base\\src\\Exceptions\\Handler.php(118): Illuminate\\Foundation\\Exceptions\\Handler->render(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#35 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(51): Botble\\Base\\Exceptions\\Handler->render(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#36 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Pipeline->handleException(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#37 C:\\laragon\\www\\acureva\\platform\\core\\js-validation\\src\\RemoteValidationMiddleware.php(43): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\JsValidation\\RemoteValidationMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\laragon\\www\\acureva\\vendor\\barryvdh\\laravel-debugbar\\src\\Middleware\\InjectDebugbar.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(109): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#55 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#56 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#57 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePathEncoding.php(26): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#58 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\ValidatePathEncoding->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#59 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#60 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#61 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#62 C:\\laragon\\www\\acureva\\public\\index.php(23): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#63 {main}
+
+[previous exception] [object] (PDOException(code: HY000): SQLSTATE[HY000]: General error: 1 no such table: ec_currencies at C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:406)
+[stacktrace]
+#0 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(406): PDO->prepare('select * from \"...')
+#1 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(811): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('select * from \"...', Array)
+#2 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(778): Illuminate\\Database\\Connection->runQueryCallback('select * from \"...', Array, Object(Closure))
+#3 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(397): Illuminate\\Database\\Connection->run('select * from \"...', Array, Object(Closure))
+#4 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3188): Illuminate\\Database\\Connection->select('select * from \"...', Array, true)
+#5 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3173): Illuminate\\Database\\Query\\Builder->runSelect()
+#6 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3763): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#7 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(3172): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#8 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(872): Illuminate\\Database\\Query\\Builder->get(Array)
+#9 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(854): Illuminate\\Database\\Eloquent\\Builder->getModels(Array)
+#10 C:\\laragon\\www\\acureva\\platform\\core\\base\\src\\Models\\BaseQueryBuilder.php(48): Illuminate\\Database\\Eloquent\\Builder->get(Array)
+#11 C:\\laragon\\www\\acureva\\platform\\plugins\\ecommerce\\src\\Supports\\CurrencySupport.php(107): Botble\\Base\\Models\\BaseQueryBuilder->get()
+#12 C:\\laragon\\www\\acureva\\platform\\plugins\\ecommerce\\src\\Supports\\CurrencySupport.php(41): Botble\\Ecommerce\\Supports\\CurrencySupport->currencies()
+#13 C:\\laragon\\www\\acureva\\platform\\plugins\\ecommerce\\helpers\\currencies.php(141): Botble\\Ecommerce\\Supports\\CurrencySupport->getApplicationCurrency()
+#14 C:\\laragon\\www\\acureva\\platform\\plugins\\ecommerce\\src\\Supports\\EcommerceHelper.php(1655): get_application_currency()
+#15 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(361): Botble\\Ecommerce\\Supports\\EcommerceHelper->registerThemeAssets()
+#16 C:\\laragon\\www\\acureva\\platform\\themes\\shopwise\\config.php(98): Illuminate\\Support\\Facades\\Facade::__callStatic('registerThemeAs...', Array)
+#17 C:\\laragon\\www\\acureva\\platform\\packages\\theme\\src\\Theme.php(347): Illuminate\\Filesystem\\Filesystem::{closure}(Object(Botble\\Theme\\Theme))
+#18 C:\\laragon\\www\\acureva\\platform\\packages\\theme\\src\\Theme.php(910): Botble\\Theme\\Theme->fire('beforeRenderThe...', Object(Botble\\Theme\\Theme))
+#19 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(361): Botble\\Theme\\Theme->fireEventGlobalAssets()
+#20 C:\\laragon\\www\\acureva\\storage\\framework\\views\\b80aa36d9eac5fe8cc891996079861b3.php(3): Illuminate\\Support\\Facades\\Facade::__callStatic('fireEventGlobal...', Array)
+#21 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#22 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#23 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(57): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#24 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(76): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#25 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#26 C:\\laragon\\www\\acureva\\platform\\packages\\shortcode\\src\\View\\View.php(50): Illuminate\\View\\View->getContents()
+#27 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Botble\\Shortcode\\View\\View->renderContents()
+#28 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(78): Illuminate\\View\\View->render()
+#29 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(34): Illuminate\\Http\\Response->setContent(Object(Botble\\Shortcode\\View\\View))
+#30 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ResponseFactory.php(61): Illuminate\\Http\\Response->__construct(Object(Botble\\Shortcode\\View\\View), 404, Array)
+#31 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ResponseFactory.php(91): Illuminate\\Routing\\ResponseFactory->make(Object(Botble\\Shortcode\\View\\View), 404, Array)
+#32 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(927): Illuminate\\Routing\\ResponseFactory->view('theme.shopwise:...', Array, 404, Array)
+#33 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(848): Illuminate\\Foundation\\Exceptions\\Handler->renderHttpException(Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#34 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(739): Illuminate\\Foundation\\Exceptions\\Handler->prepareResponse(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#35 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(627): Illuminate\\Foundation\\Exceptions\\Handler->renderExceptionResponse(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#36 C:\\laragon\\www\\acureva\\platform\\core\\base\\src\\Exceptions\\Handler.php(118): Illuminate\\Foundation\\Exceptions\\Handler->render(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#37 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(51): Botble\\Base\\Exceptions\\Handler->render(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#38 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(171): Illuminate\\Routing\\Pipeline->handleException(Object(Illuminate\\Http\\Request), Object(Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException))
+#39 C:\\laragon\\www\\acureva\\platform\\core\\js-validation\\src\\RemoteValidationMiddleware.php(43): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\JsValidation\\RemoteValidationMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\laragon\\www\\acureva\\vendor\\barryvdh\\laravel-debugbar\\src\\Middleware\\InjectDebugbar.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(109): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#55 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#56 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#57 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#58 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#59 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePathEncoding.php(26): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#60 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\ValidatePathEncoding->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#61 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#62 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#63 C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#64 C:\\laragon\\www\\acureva\\public\\index.php(23): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#65 {main}
+"} 

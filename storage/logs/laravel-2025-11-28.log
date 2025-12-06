@@ -1,0 +1,13 @@
+[2025-11-28 01:32:07] production.ERROR: Maximum execution time of 300 seconds exceeded {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 300 seconds exceeded at C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\ServeCommand.php:131)
+[stacktrace]
+#0 {main}
+"} 
+[2025-11-28 02:14:23] production.ERROR: Maximum execution time of 300 seconds exceeded {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 300 seconds exceeded at C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\ServeCommand.php:131)
+[stacktrace]
+#0 {main}
+"} 
+[2025-11-28 02:52:37] production.ERROR: Maximum execution time of 300 seconds exceeded {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Maximum execution time of 300 seconds exceeded at C:\\laragon\\www\\acureva\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\ServeCommand.php:131)
+[stacktrace]
+#0 {main}
+"} 
+[2025-11-28 03:01:24] production.INFO: Array to string conversion  

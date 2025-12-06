@@ -1,0 +1,105 @@
+@if (!$order->dont_show_order_info_in_product_list)
+    <a
+        class="button button-blue"
+        href="{{ route('public.orders.tracking', ['order_id' => $order->code, 'email' => $order->user->email ?: $order->address->email]) }}"
+    >{{ trans('plugins/ecommerce::email.view_order') }}</a>
+    {!! trans('plugins/ecommerce::email.link_go_to_our_shop', ['link' => BaseHelper::getHomepageUrl()]) !!}
+
+    <br />
+@endif
+
+<table class="bb-table" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr>
+            <th colspan="2"></th>
+            <th>{{ trans('plugins/ecommerce::products.form.quantity') }}</th>
+            <th class="bb-text-right">{{ trans('plugins/ecommerce::products.form.price') }}</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach($products ?? $order->products as $orderProduct)
+        <tr>
+            <td class="bb-pr-0">
+                <a href="">
+                    <img src="{{ RvMedia::getImageUrl($orderProduct->product_image, 'thumb') }}" 
+                         class="bb-rounded" width="64" height="64" alt="" />
+                </a>
+            </td>
+            <td class="bb-pl-md bb-w-100p">
+                <strong>{{ $orderProduct->product_name }}</strong><br />
+
+                {{-- SỬA: Xử lý attributes nếu là mảng --}}
+                @php
+                    $attributes = Arr::get($orderProduct->options ?? [], 'attributes', []);
+                @endphp
+
+                @if (is_array($attributes) && !empty($attributes))
+                    @php
+                        $attrTexts = [];
+                        foreach ($attributes as $key => $value) {
+                            $attrTexts[] = ucfirst($key) . ': ' . $value;
+                        }
+                        $attrString = implode(' | ', $attrTexts);
+                    @endphp
+                    <span class="bb-text-muted">{{ $attrString }}</span><br />
+                @endif
+
+                {{-- Hiển thị product options (nếu có) --}}
+                @if (!empty($orderProduct->product_options_implode))
+                    <span class="bb-text-muted">{{ $orderProduct->product_options_implode }}</span>
+                @endif
+            </td>
+            <td class="bb-text-center">x {{ $orderProduct->qty }}</td>
+            <td class="bb-text-right">{{ format_price($orderProduct->price) }}</td>
+        </tr>
+        @endforeach
+
+        {{-- Tổng tiền --}}
+        @if (!$order->dont_show_order_info_in_product_list)
+            @if ($order->sub_total != $order->amount)
+                <tr>
+                    <td colspan="2" class="bb-border-top bb-text-right">{{ trans('plugins/ecommerce::products.form.sub_total') }}</td>
+                    <td colspan="2" class="bb-border-top bb-text-right">{{ format_price($order->sub_total) }}</td>
+                </tr>
+            @endif
+
+            @if ((float)$order->shipping_amount > 0)
+                <tr>
+                    <td colspan="2" class="bb-text-right">{{ trans('plugins/ecommerce::products.form.shipping_fee') }}</td>
+                    <td colspan="2" class="bb-text-right">{{ format_price($order->shipping_amount) }}</td>
+                </tr>
+            @endif
+
+            @if ((float)$order->tax_amount > 0)
+                <tr>
+                    <td colspan="2" class="bb-text-right">{{ trans('plugins/ecommerce::products.form.tax') }}</td>
+                    <td colspan="2" class="bb-text-right">{{ format_price($order->tax_amount) }}</td>
+                </tr>
+            @endif
+
+            @if ((float)$order->discount_amount > 0)
+                <tr>
+                    <td colspan="2" class="bb-text-right">{{ trans('plugins/ecommerce::products.form.discount') }}</td>
+                    <td colspan="2" class="bb-text-right">{{ format_price($order->discount_amount) }}</td>
+                </tr>
+            @endif
+
+            @if ((float)$order->payment_fee > 0)
+                <tr>
+                    <td colspan="2" class="bb-text-right">{{ trans('plugins/payment::payment.payment_fee') }}</td>
+                    <td colspan="2" class="bb-text-right">{{ format_price($order->payment_fee) }}</td>
+                </tr>
+            @endif
+
+            <tr>
+                <td colspan="2" class="bb-text-right bb-font-strong bb-h3 bb-m-0">
+                    {{ trans('plugins/ecommerce::products.form.total') }}
+                </td>
+                <td colspan="2" class="bb-font-strong bb-h3 bb-m-0 bb-text-right">
+                    {{ format_price($order->amount) }}
+                </td>
+            </tr>
+        @endif
+    </tbody>
+</table>

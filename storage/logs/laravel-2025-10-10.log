@@ -1,0 +1,877 @@
+[2025-10-10 15:44:51] production.ERROR: Undefined variable $size {"userId":1,"exception":"[object] (ErrorException(code: 0): Undefined variable $size at C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Supports\\OrderHelper.php:653)
+[stacktrace]
+#0 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Undefined varia...', 'C:\\\\laragon\\\\www\\\\...', 653)
+#1 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Supports\\OrderHelper.php(653): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Undefined varia...', 'C:\\\\laragon\\\\www\\\\...', 653)
+#2 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(361): Botble\\Ecommerce\\Supports\\OrderHelper->handleAddCart(Object(Botble\\Ecommerce\\Models\\Product), Object(Botble\\Ecommerce\\Http\\Requests\\CartRequest))
+#3 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Http\\Controllers\\Fronts\\PublicCartController.php(206): Illuminate\\Support\\Facades\\Facade::__callStatic('handleAddCart', Array)
+#4 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): Botble\\Ecommerce\\Http\\Controllers\\Fronts\\PublicCartController->store(Object(Botble\\Ecommerce\\Http\\Requests\\CartRequest))
+#5 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('store', Array)
+#6 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(265): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(Botble\\Ecommerce\\Http\\Controllers\\Fronts\\PublicCartController), 'store')
+#7 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(211): Illuminate\\Routing\\Route->runController()
+#8 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(808): Illuminate\\Routing\\Route->run()
+#9 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(169): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Http\\Middleware\\CheckCartEnabledMiddleware.php(15): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Ecommerce\\Http\\Middleware\\CheckCartEnabledMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\laragon\\www\\wiseshop\\platform\\plugins\\language\\src\\Http\\Middleware\\LocalizationRedirectFilter.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Language\\Http\\Middleware\\LocalizationRedirectFilter->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#14 C:\\laragon\\www\\wiseshop\\platform\\plugins\\language\\src\\Http\\Middleware\\LocaleSessionRedirect.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#15 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Language\\Http\\Middleware\\LocaleSessionRedirect->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#16 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\CoreMiddleware.php(17): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(169): Botble\\Base\\Http\\Middleware\\CoreMiddleware->Botble\\Base\\Http\\Middleware\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\EnsureLicenseHasBeenActivated.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\EnsureLicenseHasBeenActivated->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#20 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\CoreMiddleware.php(16): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#22 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\CoreMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Http\\Middleware\\TrackAbandonedCart.php(18): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Ecommerce\\Http\\Middleware\\TrackAbandonedCart->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Http\\Middleware\\CaptureCouponMiddleware.php(14): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Ecommerce\\Http\\Middleware\\CaptureCouponMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Http\\Middleware\\CaptureFootprintsMiddleware.php(23): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Ecommerce\\Http\\Middleware\\CaptureFootprintsMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\HttpsProtocolMiddleware.php(16): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\HttpsProtocolMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\AdminLocaleMiddleware.php(17): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\AdminLocaleMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\LocaleMiddleware.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\LocaleMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\laragon\\www\\wiseshop\\platform\\packages\\installer\\src\\Http\\Middleware\\RedirectIfNotInstalledMiddleware.php(17): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Installer\\Http\\Middleware\\RedirectIfNotInstalledMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\laragon\\www\\wiseshop\\vendor\\barryvdh\\laravel-debugbar\\src\\Middleware\\InjectDebugbar.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(87): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(120): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(63): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#47 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(36): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(74): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#54 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#55 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#56 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#57 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#58 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(169): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#59 C:\\laragon\\www\\wiseshop\\platform\\core\\js-validation\\src\\RemoteValidationMiddleware.php(43): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#60 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\JsValidation\\RemoteValidationMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#61 C:\\laragon\\www\\wiseshop\\vendor\\barryvdh\\laravel-debugbar\\src\\Middleware\\InjectDebugbar.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#62 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#63 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#64 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#65 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#66 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#67 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#68 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#69 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#70 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#71 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(109): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#72 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#73 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#74 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#75 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#76 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#77 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#78 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#79 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePathEncoding.php(26): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#80 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\ValidatePathEncoding->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#81 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#82 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#83 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#84 C:\\laragon\\www\\wiseshop\\public\\index.php(23): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#85 {main}
+"} 
+[2025-10-10 17:35:36] production.ERROR: htmlspecialchars(): Argument #1 ($string) must be of type string, array given {"view":{"view":"C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\resources\\views\\orders\\checkout\\product.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-329505603 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#4019</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-329505603\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","products":"<pre class=sf-dump id=sf-dump-1686180935 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Database\\Eloquent\\Collection</span> {<a class=sf-dump-ref>#4169</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Botble\\Ecommerce\\Models\\Product
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Botble\\Ecommerce\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Product</span></span> {<a class=sf-dump-ref>#4067</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">ec_products</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:44</span> [ &#8230;44]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:42</span> [ &#8230;42]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">previous</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:28</span> [ &#8230;28]
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relationAutoloadCallback</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">relationAutoloadContext</span>: <span class=sf-dump-const>null</span>
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:34</span> [ &#8230;34]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">originalPrice</span>: <span class=sf-dump-num>0.0</span>
+      #<span class=sf-dump-protected title=\"Protected property\">finalPrice</span>: <span class=sf-dump-num>0.0</span>
+      #<span class=sf-dump-protected title=\"Protected property\">priceObject</span>: <span class=sf-dump-const title=\"Uninitialized property\">? Botble\\Ecommerce\\ValueObjects\\ProductPrice</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1686180935\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","__currentLoopData":"<pre class=sf-dump id=sf-dump-791710257 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Database\\Eloquent\\Collection</span> {<a class=sf-dump-ref>#4169</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Botble\\Ecommerce\\Models\\Product
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Botble\\Ecommerce\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Product</span></span> {<a class=sf-dump-ref>#4067</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">ec_products</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:44</span> [ &#8230;44]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:42</span> [ &#8230;42]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">previous</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:28</span> [ &#8230;28]
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:6</span> [ &#8230;6]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relationAutoloadCallback</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">relationAutoloadContext</span>: <span class=sf-dump-const>null</span>
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:34</span> [ &#8230;34]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">originalPrice</span>: <span class=sf-dump-num>0.0</span>
+      #<span class=sf-dump-protected title=\"Protected property\">finalPrice</span>: <span class=sf-dump-num>0.0</span>
+      #<span class=sf-dump-protected title=\"Protected property\">priceObject</span>: <span class=sf-dump-const title=\"Uninitialized property\">? Botble\\Ecommerce\\ValueObjects\\ProductPrice</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-791710257\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","product":"<pre class=sf-dump id=sf-dump-18297799 data-indent-pad=\"  \"><span class=sf-dump-note>Botble\\Ecommerce\\Models\\Product</span> {<a class=sf-dump-ref>#4067</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">ec_products</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:44</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>87</span>
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Drop The Needle Tank Top</span>\"
+    \"<span class=sf-dump-key>description</span>\" => \"\"
+    \"<span class=sf-dump-key>content</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"9 characters\">published</span>\"
+    \"<span class=sf-dump-key>images</span>\" => \"<span class=sf-dump-str title=\"2 characters\">[]</span>\"
+    \"<span class=sf-dump-key>video_media</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>sku</span>\" => \"<span class=sf-dump-str title=\"12 characters\">SF-2443-1XEK</span>\"
+    \"<span class=sf-dump-key>order</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>quantity</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>allow_checkout_when_out_of_stock</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>with_storehouse_management</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>stock_status</span>\" => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Botble\\Ecommerce\\Enums\\StockStatusEnum
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Botble\\Ecommerce\\Enums</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">StockStatusEnum</span></span> {<a class=sf-dump-ref href=#sf-dump-18297799-ref24155 title=\"2 occurrences\">#4155</a><samp data-depth=3 id=sf-dump-18297799-ref24155 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">value</span>: \"<span class=sf-dump-str title=\"8 characters\">in_stock</span>\"
+    </samp>}
+    \"<span class=sf-dump-key>is_featured</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>brand_id</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>is_variation</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>sale_type</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>price</span>\" => <span class=sf-dump-num>25.0</span>
+    \"<span class=sf-dump-key>sale_price</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>start_date</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>end_date</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>length</span>\" => <span class=sf-dump-num>0.0</span>
+    \"<span class=sf-dump-key>wide</span>\" => <span class=sf-dump-num>0.0</span>
+    \"<span class=sf-dump-key>height</span>\" => <span class=sf-dump-num>0.0</span>
+    \"<span class=sf-dump-key>weight</span>\" => <span class=sf-dump-num>0.0</span>
+    \"<span class=sf-dump-key>tax_id</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>views</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2025-09-20 16:58:52</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2025-09-27 03:45:47</span>\"
+    \"<span class=sf-dump-key>created_by_id</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>created_by_type</span>\" => \"<span class=sf-dump-str title=\"22 characters\">Botble\\ACL\\Models\\User</span>\"
+    \"<span class=sf-dump-key>image</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>product_type</span>\" => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Botble\\Ecommerce\\Enums\\ProductTypeEnum
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Botble\\Ecommerce\\Enums</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">ProductTypeEnum</span></span> {<a class=sf-dump-ref href=#sf-dump-18297799-ref24073 title=\"2 occurrences\">#4073</a><samp data-depth=3 id=sf-dump-18297799-ref24073 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">value</span>: \"<span class=sf-dump-str title=\"8 characters\">physical</span>\"
+    </samp>}
+    \"<span class=sf-dump-key>barcode</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>cost_per_item</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>generate_license_code</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>license_code_type</span>\" => \"<span class=sf-dump-str title=\"13 characters\">auto_generate</span>\"
+    \"<span class=sf-dump-key>minimum_order_quantity</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>maximum_order_quantity</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>notify_attachment_updated</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>specification_table_id</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>final_price</span>\" => <span class=sf-dump-num>25.0</span>
+    \"<span class=sf-dump-key>cartItem</span>\" => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Botble\\Ecommerce\\Cart\\CartItem
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Botble\\Ecommerce\\Cart</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">CartItem</span></span> {<a class=sf-dump-ref>#4009</a><samp data-depth=3 class=sf-dump-compact>
+      +<span class=sf-dump-public title=\"Public property\">rowId</span>: \"<span class=sf-dump-str title=\"32 characters\">41151d52b9b06d7759fc00753a8d846a</span>\"
+      +<span class=sf-dump-public title=\"Public property\">id</span>: <span class=sf-dump-num>87</span>
+      +<span class=sf-dump-public title=\"Public property\">qty</span>: <span class=sf-dump-num>1</span>
+      +<span class=sf-dump-public title=\"Public property\">name</span>: \"<span class=sf-dump-str title=\"24 characters\">Drop The Needle Tank Top</span>\"
+      +<span class=sf-dump-public title=\"Public property\">price</span>: <span class=sf-dump-num>25.0</span>
+      +<span class=sf-dump-public title=\"Public property\">options</span>: <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Botble\\Ecommerce\\Cart\\CartItemOptions
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Botble\\Ecommerce\\Cart</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">CartItemOptions</span></span> {<a class=sf-dump-ref>#4010</a> &#8230;2}
+      #<span class=sf-dump-protected title=\"Protected property\">associatedModel</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">taxRate</span>: <span class=sf-dump-num>0.0</span>
+      +<span class=sf-dump-public title=\"Public property\">updated_at</span>: <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Carbon\\Carbon @1760114442
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Carbon</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Carbon @1760114442</span></span> {<a class=sf-dump-ref>#4011</a> &#8230;18}
+      +<span class=sf-dump-public title=\"Public property\">created_at</span>: <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Carbon\\Carbon @1760114442
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Carbon</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Carbon @1760114442</span></span> {<a class=sf-dump-ref>#4012</a> &#8230;18}
+    </samp>}
+    \"<span class=sf-dump-key>unique_id</span>\" => <span class=sf-dump-num>87</span>
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:42</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>87</span>
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Drop The Needle Tank Top</span>\"
+    \"<span class=sf-dump-key>description</span>\" => \"\"
+    \"<span class=sf-dump-key>content</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"9 characters\">published</span>\"
+    \"<span class=sf-dump-key>images</span>\" => \"<span class=sf-dump-str title=\"2 characters\">[]</span>\"
+    \"<span class=sf-dump-key>video_media</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>sku</span>\" => \"<span class=sf-dump-str title=\"12 characters\">SF-2443-1XEK</span>\"
+    \"<span class=sf-dump-key>order</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>quantity</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>allow_checkout_when_out_of_stock</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>with_storehouse_management</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>stock_status</span>\" => \"<span class=sf-dump-str title=\"8 characters\">in_stock</span>\"
+    \"<span class=sf-dump-key>is_featured</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>brand_id</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>is_variation</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>sale_type</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>price</span>\" => <span class=sf-dump-num>25.0</span>
+    \"<span class=sf-dump-key>sale_price</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>start_date</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>end_date</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>length</span>\" => <span class=sf-dump-num>0.0</span>
+    \"<span class=sf-dump-key>wide</span>\" => <span class=sf-dump-num>0.0</span>
+    \"<span class=sf-dump-key>height</span>\" => <span class=sf-dump-num>0.0</span>
+    \"<span class=sf-dump-key>weight</span>\" => <span class=sf-dump-num>0.0</span>
+    \"<span class=sf-dump-key>tax_id</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>views</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2025-09-20 16:58:52</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2025-09-27 03:45:47</span>\"
+    \"<span class=sf-dump-key>created_by_id</span>\" => <span class=sf-dump-num>1</span>
+    \"<span class=sf-dump-key>created_by_type</span>\" => \"<span class=sf-dump-str title=\"22 characters\">Botble\\ACL\\Models\\User</span>\"
+    \"<span class=sf-dump-key>image</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>product_type</span>\" => \"<span class=sf-dump-str title=\"8 characters\">physical</span>\"
+    \"<span class=sf-dump-key>barcode</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>cost_per_item</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>generate_license_code</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>license_code_type</span>\" => \"<span class=sf-dump-str title=\"13 characters\">auto_generate</span>\"
+    \"<span class=sf-dump-key>minimum_order_quantity</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>maximum_order_quantity</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>notify_attachment_updated</span>\" => <span class=sf-dump-num>0</span>
+    \"<span class=sf-dump-key>specification_table_id</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>final_price</span>\" => <span class=sf-dump-num>25.0</span>
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">previous</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:28</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>status</span>\" => \"<span class=sf-dump-str title=\"32 characters\">Botble\\Base\\Enums\\BaseStatusEnum</span>\"
+    \"<span class=sf-dump-key>stock_status</span>\" => \"<span class=sf-dump-str title=\"38 characters\">Botble\\Ecommerce\\Enums\\StockStatusEnum</span>\"
+    \"<span class=sf-dump-key>product_type</span>\" => \"<span class=sf-dump-str title=\"38 characters\">Botble\\Ecommerce\\Enums\\ProductTypeEnum</span>\"
+    \"<span class=sf-dump-key>price</span>\" => \"<span class=sf-dump-str title=\"5 characters\">float</span>\"
+    \"<span class=sf-dump-key>sale_price</span>\" => \"<span class=sf-dump-str title=\"5 characters\">float</span>\"
+    \"<span class=sf-dump-key>name</span>\" => \"<span class=sf-dump-str title=\"29 characters\">Botble\\Base\\Casts\\SafeContent</span>\"
+    \"<span class=sf-dump-key>description</span>\" => \"<span class=sf-dump-str title=\"29 characters\">Botble\\Base\\Casts\\SafeContent</span>\"
+    \"<span class=sf-dump-key>content</span>\" => \"<span class=sf-dump-str title=\"29 characters\">Botble\\Base\\Casts\\SafeContent</span>\"
+    \"<span class=sf-dump-key>sale_type</span>\" => \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+    \"<span class=sf-dump-key>start_date</span>\" => \"<span class=sf-dump-str title=\"8 characters\">datetime</span>\"
+    \"<span class=sf-dump-key>end_date</span>\" => \"<span class=sf-dump-str title=\"8 characters\">datetime</span>\"
+    \"<span class=sf-dump-key>minimum_order_quantity</span>\" => \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+    \"<span class=sf-dump-key>maximum_order_quantity</span>\" => \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+    \"<span class=sf-dump-key>is_featured</span>\" => \"<span class=sf-dump-str title=\"4 characters\">bool</span>\"
+    \"<span class=sf-dump-key>allow_checkout_when_out_of_stock</span>\" => \"<span class=sf-dump-str title=\"4 characters\">bool</span>\"
+    \"<span class=sf-dump-key>with_storehouse_management</span>\" => \"<span class=sf-dump-str title=\"4 characters\">bool</span>\"
+    \"<span class=sf-dump-key>generate_license_code</span>\" => \"<span class=sf-dump-str title=\"4 characters\">bool</span>\"
+    \"<span class=sf-dump-key>notify_attachment_updated</span>\" => \"<span class=sf-dump-str title=\"4 characters\">bool</span>\"
+    \"<span class=sf-dump-key>video_media</span>\" => \"<span class=sf-dump-str title=\"4 characters\">json</span>\"
+    \"<span class=sf-dump-key>length</span>\" => \"<span class=sf-dump-str title=\"5 characters\">float</span>\"
+    \"<span class=sf-dump-key>wide</span>\" => \"<span class=sf-dump-str title=\"5 characters\">float</span>\"
+    \"<span class=sf-dump-key>height</span>\" => \"<span class=sf-dump-str title=\"5 characters\">float</span>\"
+    \"<span class=sf-dump-key>weight</span>\" => \"<span class=sf-dump-str title=\"5 characters\">float</span>\"
+    \"<span class=sf-dump-key>views</span>\" => \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+    \"<span class=sf-dump-key>quantity</span>\" => \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+    \"<span class=sf-dump-key>order</span>\" => \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+    \"<span class=sf-dump-key>cost_per_item</span>\" => \"<span class=sf-dump-str title=\"5 characters\">float</span>\"
+    \"<span class=sf-dump-key>is_variation</span>\" => \"<span class=sf-dump-str title=\"4 characters\">bool</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>stock_status</span>\" => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Botble\\Ecommerce\\Enums\\StockStatusEnum
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Botble\\Ecommerce\\Enums</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">StockStatusEnum</span></span> {<a class=sf-dump-ref href=#sf-dump-18297799-ref24155 title=\"2 occurrences\">#4155</a>}
+    \"<span class=sf-dump-key>product_type</span>\" => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Botble\\Ecommerce\\Enums\\ProductTypeEnum
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Botble\\Ecommerce\\Enums</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">ProductTypeEnum</span></span> {<a class=sf-dump-ref href=#sf-dump-18297799-ref24073 title=\"2 occurrences\">#4073</a>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>original_product</span>\" => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Botble\\Ecommerce\\Models\\Product
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Botble\\Ecommerce\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Product</span></span> {<a class=sf-dump-ref href=#sf-dump-18297799-ref24166 title=\"2 occurrences\">#4166</a><samp data-depth=3 id=sf-dump-18297799-ref24166 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"11 characters\">ec_products</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:41</span> [ &#8230;41]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:41</span> [ &#8230;41]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">previous</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:28</span> [ &#8230;28]
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relationAutoloadCallback</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">relationAutoloadContext</span>: <span class=sf-dump-const>null</span>
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:34</span> [ &#8230;34]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">originalPrice</span>: <span class=sf-dump-num>0.0</span>
+      #<span class=sf-dump-protected title=\"Protected property\">finalPrice</span>: <span class=sf-dump-num>0.0</span>
+      #<span class=sf-dump-protected title=\"Protected property\">priceObject</span>: <span class=sf-dump-const title=\"Uninitialized property\">? Botble\\Ecommerce\\ValueObjects\\ProductPrice</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"14 characters\">original_price</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"16 characters\">front_sale_price</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:6</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>slugable</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>defaultVariation</span>\" => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Botble\\Ecommerce\\Models\\ProductVariation
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Botble\\Ecommerce\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">ProductVariation</span></span> {<a class=sf-dump-ref>#4130</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"21 characters\">ec_product_variations</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>false</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">previous</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relationAutoloadCallback</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">relationAutoloadContext</span>: <span class=sf-dump-const>null</span>
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>false</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:3</span> [ &#8230;3]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    \"<span class=sf-dump-key>productCollections</span>\" => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Database\\Eloquent\\Collection
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Database\\Eloquent</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Collection</span></span> {<a class=sf-dump-ref>#4133</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">items</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+    </samp>}
+    \"<span class=sf-dump-key>productLabels</span>\" => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Database\\Eloquent\\Collection
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Database\\Eloquent</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Collection</span></span> {<a class=sf-dump-ref>#4137</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">items</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+    </samp>}
+    \"<span class=sf-dump-key>variationInfo</span>\" => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Botble\\Ecommerce\\Models\\ProductVariation
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Botble\\Ecommerce\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">ProductVariation</span></span> {<a class=sf-dump-ref>#4157</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"21 characters\">ec_product_variations</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:4</span> [ &#8230;4]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:4</span> [ &#8230;4]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">previous</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relationAutoloadCallback</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">relationAutoloadContext</span>: <span class=sf-dump-const>null</span>
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>false</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:3</span> [ &#8230;3]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    \"<span class=sf-dump-key>variationProductAttributes</span>\" => <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Illuminate\\Database\\Eloquent\\Collection
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Database\\Eloquent</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Collection</span></span> {<a class=sf-dump-ref>#4172</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relationAutoloadCallback</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">relationAutoloadContext</span>: <span class=sf-dump-const>null</span>
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:34</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"4 characters\">name</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"11 characters\">description</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"7 characters\">content</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"5 characters\">image</span>\"
+    <span class=sf-dump-index>4</span> => \"<span class=sf-dump-str title=\"6 characters\">images</span>\"
+    <span class=sf-dump-index>5</span> => \"<span class=sf-dump-str title=\"11 characters\">video_media</span>\"
+    <span class=sf-dump-index>6</span> => \"<span class=sf-dump-str title=\"3 characters\">sku</span>\"
+    <span class=sf-dump-index>7</span> => \"<span class=sf-dump-str title=\"5 characters\">order</span>\"
+    <span class=sf-dump-index>8</span> => \"<span class=sf-dump-str title=\"8 characters\">quantity</span>\"
+    <span class=sf-dump-index>9</span> => \"<span class=sf-dump-str title=\"32 characters\">allow_checkout_when_out_of_stock</span>\"
+    <span class=sf-dump-index>10</span> => \"<span class=sf-dump-str title=\"26 characters\">with_storehouse_management</span>\"
+    <span class=sf-dump-index>11</span> => \"<span class=sf-dump-str title=\"11 characters\">is_featured</span>\"
+    <span class=sf-dump-index>12</span> => \"<span class=sf-dump-str title=\"8 characters\">brand_id</span>\"
+    <span class=sf-dump-index>13</span> => \"<span class=sf-dump-str title=\"12 characters\">is_variation</span>\"
+    <span class=sf-dump-index>14</span> => \"<span class=sf-dump-str title=\"9 characters\">sale_type</span>\"
+    <span class=sf-dump-index>15</span> => \"<span class=sf-dump-str title=\"5 characters\">price</span>\"
+    <span class=sf-dump-index>16</span> => \"<span class=sf-dump-str title=\"10 characters\">sale_price</span>\"
+    <span class=sf-dump-index>17</span> => \"<span class=sf-dump-str title=\"10 characters\">start_date</span>\"
+    <span class=sf-dump-index>18</span> => \"<span class=sf-dump-str title=\"8 characters\">end_date</span>\"
+    <span class=sf-dump-index>19</span> => \"<span class=sf-dump-str title=\"6 characters\">length</span>\"
+    <span class=sf-dump-index>20</span> => \"<span class=sf-dump-str title=\"4 characters\">wide</span>\"
+    <span class=sf-dump-index>21</span> => \"<span class=sf-dump-str title=\"6 characters\">height</span>\"
+    <span class=sf-dump-index>22</span> => \"<span class=sf-dump-str title=\"6 characters\">weight</span>\"
+    <span class=sf-dump-index>23</span> => \"<span class=sf-dump-str title=\"6 characters\">tax_id</span>\"
+    <span class=sf-dump-index>24</span> => \"<span class=sf-dump-str title=\"5 characters\">views</span>\"
+    <span class=sf-dump-index>25</span> => \"<span class=sf-dump-str title=\"12 characters\">stock_status</span>\"
+    <span class=sf-dump-index>26</span> => \"<span class=sf-dump-str title=\"7 characters\">barcode</span>\"
+    <span class=sf-dump-index>27</span> => \"<span class=sf-dump-str title=\"13 characters\">cost_per_item</span>\"
+    <span class=sf-dump-index>28</span> => \"<span class=sf-dump-str title=\"21 characters\">generate_license_code</span>\"
+    <span class=sf-dump-index>29</span> => \"<span class=sf-dump-str title=\"17 characters\">license_code_type</span>\"
+    <span class=sf-dump-index>30</span> => \"<span class=sf-dump-str title=\"22 characters\">minimum_order_quantity</span>\"
+    <span class=sf-dump-index>31</span> => \"<span class=sf-dump-str title=\"22 characters\">maximum_order_quantity</span>\"
+    <span class=sf-dump-index>32</span> => \"<span class=sf-dump-str title=\"25 characters\">notify_attachment_updated</span>\"
+    <span class=sf-dump-index>33</span> => \"<span class=sf-dump-str title=\"22 characters\">specification_table_id</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">originalPrice</span>: <span class=sf-dump-num>0.0</span>
+  #<span class=sf-dump-protected title=\"Protected property\">finalPrice</span>: <span class=sf-dump-num>0.0</span>
+  #<span class=sf-dump-protected title=\"Protected property\">priceObject</span>: <span class=sf-dump-const title=\"Uninitialized property\">? Botble\\Ecommerce\\ValueObjects\\ProductPrice</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-18297799\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","key":"<pre class=sf-dump id=sf-dump-2039058495 data-indent-pad=\"  \">\"<span class=sf-dump-str title=\"32 characters\">41151d52b9b06d7759fc00753a8d846a</span>\"
+</pre><script>Sfdump(\"sf-dump-2039058495\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","loop":"<pre class=sf-dump id=sf-dump-831493384 data-indent-pad=\"  \">{<a class=sf-dump-ref>#4407</a><samp data-depth=1 class=sf-dump-expanded>
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">iteration</span>\": <span class=sf-dump-num>1</span>
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">index</span>\": <span class=sf-dump-num>0</span>
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">remaining</span>\": <span class=sf-dump-num>0</span>
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">count</span>\": <span class=sf-dump-num>1</span>
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">first</span>\": <span class=sf-dump-const>true</span>
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">last</span>\": <span class=sf-dump-const>true</span>
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">odd</span>\": <span class=sf-dump-const>true</span>
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">even</span>\": <span class=sf-dump-const>false</span>
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">depth</span>\": <span class=sf-dump-num>1</span>
+  +\"<span class=sf-dump-public title=\"Runtime added dynamic property\">parent</span>\": <span class=sf-dump-const>null</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-831493384\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","cartItem":"<pre class=sf-dump id=sf-dump-215940629 data-indent-pad=\"  \"><span class=sf-dump-note>Botble\\Ecommerce\\Cart\\CartItem</span> {<a class=sf-dump-ref>#4009</a><samp data-depth=1 class=sf-dump-expanded>
+  +<span class=sf-dump-public title=\"Public property\">rowId</span>: \"<span class=sf-dump-str title=\"32 characters\">41151d52b9b06d7759fc00753a8d846a</span>\"
+  +<span class=sf-dump-public title=\"Public property\">id</span>: <span class=sf-dump-num>87</span>
+  +<span class=sf-dump-public title=\"Public property\">qty</span>: <span class=sf-dump-num>1</span>
+  +<span class=sf-dump-public title=\"Public property\">name</span>: \"<span class=sf-dump-str title=\"24 characters\">Drop The Needle Tank Top</span>\"
+  +<span class=sf-dump-public title=\"Public property\">price</span>: <span class=sf-dump-num>25.0</span>
+  +<span class=sf-dump-public title=\"Public property\">options</span>: <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Botble\\Ecommerce\\Cart\\CartItemOptions
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Botble\\Ecommerce\\Cart</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">CartItemOptions</span></span> {<a class=sf-dump-ref>#4010</a><samp data-depth=2 class=sf-dump-compact>
+    #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:8</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>image</span>\" => \"<span class=sf-dump-str title=\"43 characters\">products/drop-the-needle-tank-top-black.jpg</span>\"
+      \"<span class=sf-dump-key>attributes</span>\" => <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      \"<span class=sf-dump-key>taxRate</span>\" => <span class=sf-dump-num>0.0</span>
+      \"<span class=sf-dump-key>taxClasses</span>\" => []
+      \"<span class=sf-dump-key>options</span>\" => []
+      \"<span class=sf-dump-key>extras</span>\" => []
+      \"<span class=sf-dump-key>sku</span>\" => \"<span class=sf-dump-str title=\"12 characters\">SF-2443-1XEK</span>\"
+      \"<span class=sf-dump-key>weight</span>\" => <span class=sf-dump-num>0.0</span>
+    </samp>]
+    #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  </samp>}
+  #<span class=sf-dump-protected title=\"Protected property\">associatedModel</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">taxRate</span>: <span class=sf-dump-num>0.0</span>
+  +<span class=sf-dump-public title=\"Public property\">updated_at</span>: <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Carbon\\Carbon @1760114442
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Carbon</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Carbon @1760114442</span></span> {<a class=sf-dump-ref>#4011</a><samp data-depth=2 class=sf-dump-compact>
+    #<span class=sf-dump-protected title=\"Protected property\">endOfTime</span>: <span class=sf-dump-const>false</span>
+    #<span class=sf-dump-protected title=\"Protected property\">startOfTime</span>: <span class=sf-dump-const>false</span>
+    #<span class=sf-dump-protected title=\"Protected property\">constructedObjectId</span>: \"<span class=sf-dump-str title=\"32 characters\">0000000000000fab0000000000000000</span>\"
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Carbon\\Carbon`\">clock</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localMonthsOverflow</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localYearsOverflow</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localStrictModeEnabled</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localHumanDiffOptions</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localToStringFormat</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localSerializer</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localMacros</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localGenericMacros</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localFormatFunction</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localTranslator</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">dumpProperties</span>: <span class=sf-dump-note>array:3</span> [<samp data-depth=3 class=sf-dump-compact>
+      <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"4 characters\">date</span>\"
+      <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"13 characters\">timezone_type</span>\"
+      <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"8 characters\">timezone</span>\"
+    </samp>]
+    #<span class=sf-dump-protected title=\"Protected property\">dumpLocale</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">dumpDateProperties</span>: <span class=sf-dump-const>null</span>
+    <span class=sf-dump-meta>date</span>: <span class=sf-dump-const title=\"Friday, October 10, 2025
+- 00:54:53.6905 from now
+DST Off\">2025-10-10 16:40:42.726363 UTC (+00:00)</span>
+  </samp>}
+  +<span class=sf-dump-public title=\"Public property\">created_at</span>: <span class=\"sf-dump-note sf-dump-ellipsization\" title=\"Carbon\\Carbon @1760114442
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Carbon</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span><span class=\"sf-dump-ellipsis-tail\">Carbon @1760114442</span></span> {<a class=sf-dump-ref>#4012</a><samp data-depth=2 class=sf-dump-compact>
+    #<span class=sf-dump-protected title=\"Protected property\">endOfTime</span>: <span class=sf-dump-const>false</span>
+    #<span class=sf-dump-protected title=\"Protected property\">startOfTime</span>: <span class=sf-dump-const>false</span>
+    #<span class=sf-dump-protected title=\"Protected property\">constructedObjectId</span>: \"<span class=sf-dump-str title=\"32 characters\">0000000000000fac0000000000000000</span>\"
+    -<span class=sf-dump-private title=\"Private property defined in class:&#10;`Carbon\\Carbon`\">clock</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localMonthsOverflow</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localYearsOverflow</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localStrictModeEnabled</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localHumanDiffOptions</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localToStringFormat</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localSerializer</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localMacros</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localGenericMacros</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localFormatFunction</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">localTranslator</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">dumpProperties</span>: <span class=sf-dump-note>array:3</span> [<samp data-depth=3 class=sf-dump-compact>
+      <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"4 characters\">date</span>\"
+      <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"13 characters\">timezone_type</span>\"
+      <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"8 characters\">timezone</span>\"
+    </samp>]
+    #<span class=sf-dump-protected title=\"Protected property\">dumpLocale</span>: <span class=sf-dump-const>null</span>
+    #<span class=sf-dump-protected title=\"Protected property\">dumpDateProperties</span>: <span class=sf-dump-const>null</span>
+    <span class=sf-dump-meta>date</span>: <span class=sf-dump-const title=\"Friday, October 10, 2025
+- 00:54:53.690537 from now
+DST Off\">2025-10-10 16:40:42.726357 UTC (+00:00)</span>
+  </samp>}
+</samp>}
+</pre><script>Sfdump(\"sf-dump-215940629\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"userId":1,"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): htmlspecialchars(): Argument #1 ($string) must be of type string, array given at C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php:141)
+[stacktrace]
+#0 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(141): htmlspecialchars(Array, 11, 'UTF-8', true)
+#1 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\resources\\views\\orders\\checkout\\product.blade.php(24): e(Array)
+#2 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#3 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(57): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#5 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(76): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#6 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#7 C:\\laragon\\www\\wiseshop\\platform\\packages\\shortcode\\src\\View\\View.php(50): Illuminate\\View\\View->getContents()
+#8 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Botble\\Shortcode\\View\\View->renderContents()
+#9 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\resources\\views\\orders\\checkout\\products.blade.php(9): Illuminate\\View\\View->render()
+#10 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#11 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#12 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(57): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#13 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(76): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#14 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#15 C:\\laragon\\www\\wiseshop\\platform\\packages\\shortcode\\src\\View\\View.php(50): Illuminate\\View\\View->getContents()
+#16 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Botble\\Shortcode\\View\\View->renderContents()
+#17 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Providers\\HookServiceProvider.php(1493): Illuminate\\View\\View->render()
+#18 [internal function]: Botble\\Ecommerce\\Providers\\HookServiceProvider->renderProductsInCheckoutPage(Object(Illuminate\\Database\\Eloquent\\Collection))
+#19 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Supports\\Filter.php(25): call_user_func_array(Array, Array)
+#20 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(361): Botble\\Base\\Supports\\Filter->fire('render_products...', Array)
+#21 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\helpers\\action-filter.php(39): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)
+#22 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\resources\\views\\orders\\partials\\amount.blade.php(1): apply_filters('render_products...', Object(Illuminate\\Database\\Eloquent\\Collection))
+#23 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#24 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#25 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(57): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#26 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(76): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#27 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#28 C:\\laragon\\www\\wiseshop\\platform\\packages\\shortcode\\src\\View\\View.php(50): Illuminate\\View\\View->getContents()
+#29 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Botble\\Shortcode\\View\\View->renderContents()
+#30 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(505): Illuminate\\View\\View->render()
+#31 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Forms\\FieldOptions\\HtmlFieldOption.php(19): Illuminate\\View\\View->__toString()
+#32 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Forms\\Fronts\\CheckoutForm.php(48): Botble\\Base\\Forms\\FieldOptions\\HtmlFieldOption->content(Object(Botble\\Shortcode\\View\\View))
+#33 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Forms\\Fronts\\CheckoutForm.php(365): Botble\\Ecommerce\\Forms\\Fronts\\CheckoutForm->Botble\\Ecommerce\\Forms\\Fronts\\{closure}(Object(Botble\\Ecommerce\\Forms\\Fronts\\CheckoutForm))
+#34 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Forms\\Fronts\\CheckoutForm.php(43): Botble\\Ecommerce\\Forms\\Fronts\\CheckoutForm->addWrapper('main_checkout_p...', '<div class=\"row...', '</div>', Object(Closure))
+#35 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Forms\\FormAbstract.php(101): Botble\\Ecommerce\\Forms\\Fronts\\CheckoutForm->setup()
+#36 C:\\laragon\\www\\wiseshop\\platform\\packages\\theme\\src\\FormFront.php(48): Botble\\Base\\Forms\\FormAbstract->buildForm()
+#37 C:\\laragon\\www\\wiseshop\\vendor\\botble\\form-builder\\src\\FormBuilder.php(44): Botble\\Theme\\FormFront->buildForm()
+#38 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Forms\\FormBuilder.php(11): Kris\\LaravelFormBuilder\\FormBuilder->create('Botble\\\\Ecommerc...', Array, Array)
+#39 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Forms\\FormAbstract.php(577): Botble\\Base\\Forms\\FormBuilder->create('Botble\\\\Ecommerc...', Array, Array)
+#40 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Forms\\FormAbstract.php(582): Botble\\Base\\Forms\\FormAbstract::create(Array, Array)
+#41 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Http\\Controllers\\Fronts\\PublicCheckoutController.php(225): Botble\\Base\\Forms\\FormAbstract::createFromArray(Array)
+#42 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): Botble\\Ecommerce\\Http\\Controllers\\Fronts\\PublicCheckoutController->getCheckout('cd7f7e9a8e0d7db...', Object(Illuminate\\Http\\Request), Object(Botble\\Ecommerce\\Services\\HandleTaxService), Object(Botble\\Ecommerce\\Services\\HandleCheckoutOrderData))
+#43 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('getCheckout', Array)
+#44 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(265): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(Botble\\Ecommerce\\Http\\Controllers\\Fronts\\PublicCheckoutController), 'getCheckout')
+#45 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(211): Illuminate\\Routing\\Route->runController()
+#46 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(808): Illuminate\\Routing\\Route->run()
+#47 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(169): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\laragon\\www\\wiseshop\\platform\\plugins\\language\\src\\Http\\Middleware\\LocalizationRedirectFilter.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Language\\Http\\Middleware\\LocalizationRedirectFilter->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 C:\\laragon\\www\\wiseshop\\platform\\plugins\\language\\src\\Http\\Middleware\\LocaleSessionRedirect.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Language\\Http\\Middleware\\LocaleSessionRedirect->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\CoreMiddleware.php(17): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(169): Botble\\Base\\Http\\Middleware\\CoreMiddleware->Botble\\Base\\Http\\Middleware\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\EnsureLicenseHasBeenActivated.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\EnsureLicenseHasBeenActivated->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#56 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#57 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\CoreMiddleware.php(16): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#58 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\CoreMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#59 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Http\\Middleware\\TrackAbandonedCart.php(18): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#60 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Ecommerce\\Http\\Middleware\\TrackAbandonedCart->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#61 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Http\\Middleware\\CaptureCouponMiddleware.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#62 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Ecommerce\\Http\\Middleware\\CaptureCouponMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#63 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Http\\Middleware\\CaptureFootprintsMiddleware.php(23): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#64 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Ecommerce\\Http\\Middleware\\CaptureFootprintsMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#65 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\HttpsProtocolMiddleware.php(16): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#66 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\HttpsProtocolMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#67 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\AdminLocaleMiddleware.php(17): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#68 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\AdminLocaleMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#69 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\LocaleMiddleware.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#70 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\LocaleMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#71 C:\\laragon\\www\\wiseshop\\platform\\packages\\installer\\src\\Http\\Middleware\\RedirectIfNotInstalledMiddleware.php(17): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#72 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Installer\\Http\\Middleware\\RedirectIfNotInstalledMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#73 C:\\laragon\\www\\wiseshop\\vendor\\barryvdh\\laravel-debugbar\\src\\Middleware\\InjectDebugbar.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#74 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#75 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#76 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#77 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(87): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#78 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#79 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#80 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#81 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(120): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#82 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(63): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#83 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#84 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(36): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#85 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#86 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(74): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#87 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#88 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#89 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#90 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#91 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#92 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#93 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#94 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(169): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#95 C:\\laragon\\www\\wiseshop\\platform\\core\\js-validation\\src\\RemoteValidationMiddleware.php(43): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#96 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\JsValidation\\RemoteValidationMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#97 C:\\laragon\\www\\wiseshop\\vendor\\barryvdh\\laravel-debugbar\\src\\Middleware\\InjectDebugbar.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#98 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#99 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#100 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#101 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#102 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#103 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#104 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#105 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#106 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#107 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(109): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#108 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#109 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#110 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#111 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#112 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#113 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#114 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#115 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePathEncoding.php(26): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#116 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\ValidatePathEncoding->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#117 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#118 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#119 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#120 C:\\laragon\\www\\wiseshop\\public\\index.php(23): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#121 {main}
+
+[previous exception] [object] (TypeError(code: 0): htmlspecialchars(): Argument #1 ($string) must be of type string, array given at C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php:141)
+[stacktrace]
+#0 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\helpers.php(141): htmlspecialchars(Array, 11, 'UTF-8', true)
+#1 C:\\laragon\\www\\wiseshop\\storage\\framework\\views\\aff9391d52d7d5f501940b9562e3eb09.php(26): e(Array)
+#2 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#3 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(57): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#5 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(76): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#6 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#7 C:\\laragon\\www\\wiseshop\\platform\\packages\\shortcode\\src\\View\\View.php(50): Illuminate\\View\\View->getContents()
+#8 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Botble\\Shortcode\\View\\View->renderContents()
+#9 C:\\laragon\\www\\wiseshop\\storage\\framework\\views\\bc4336885e531a40695b1837b9e501a3.php(13): Illuminate\\View\\View->render()
+#10 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#11 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#12 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(57): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#13 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(76): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#14 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#15 C:\\laragon\\www\\wiseshop\\platform\\packages\\shortcode\\src\\View\\View.php(50): Illuminate\\View\\View->getContents()
+#16 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Botble\\Shortcode\\View\\View->renderContents()
+#17 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Providers\\HookServiceProvider.php(1493): Illuminate\\View\\View->render()
+#18 [internal function]: Botble\\Ecommerce\\Providers\\HookServiceProvider->renderProductsInCheckoutPage(Object(Illuminate\\Database\\Eloquent\\Collection))
+#19 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Supports\\Filter.php(25): call_user_func_array(Array, Array)
+#20 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(361): Botble\\Base\\Supports\\Filter->fire('render_products...', Array)
+#21 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\helpers\\action-filter.php(39): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)
+#22 C:\\laragon\\www\\wiseshop\\storage\\framework\\views\\dfa64611319c643efcfe70aa6cb464c5.php(1): apply_filters('render_products...', Object(Illuminate\\Database\\Eloquent\\Collection))
+#23 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#24 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#25 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(57): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#26 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(76): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#27 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#28 C:\\laragon\\www\\wiseshop\\platform\\packages\\shortcode\\src\\View\\View.php(50): Illuminate\\View\\View->getContents()
+#29 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Botble\\Shortcode\\View\\View->renderContents()
+#30 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(505): Illuminate\\View\\View->render()
+#31 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Forms\\FieldOptions\\HtmlFieldOption.php(19): Illuminate\\View\\View->__toString()
+#32 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Forms\\Fronts\\CheckoutForm.php(48): Botble\\Base\\Forms\\FieldOptions\\HtmlFieldOption->content(Object(Botble\\Shortcode\\View\\View))
+#33 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Forms\\Fronts\\CheckoutForm.php(365): Botble\\Ecommerce\\Forms\\Fronts\\CheckoutForm->Botble\\Ecommerce\\Forms\\Fronts\\{closure}(Object(Botble\\Ecommerce\\Forms\\Fronts\\CheckoutForm))
+#34 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Forms\\Fronts\\CheckoutForm.php(43): Botble\\Ecommerce\\Forms\\Fronts\\CheckoutForm->addWrapper('main_checkout_p...', '<div class=\"row...', '</div>', Object(Closure))
+#35 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Forms\\FormAbstract.php(101): Botble\\Ecommerce\\Forms\\Fronts\\CheckoutForm->setup()
+#36 C:\\laragon\\www\\wiseshop\\platform\\packages\\theme\\src\\FormFront.php(48): Botble\\Base\\Forms\\FormAbstract->buildForm()
+#37 C:\\laragon\\www\\wiseshop\\vendor\\botble\\form-builder\\src\\FormBuilder.php(44): Botble\\Theme\\FormFront->buildForm()
+#38 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Forms\\FormBuilder.php(11): Kris\\LaravelFormBuilder\\FormBuilder->create('Botble\\\\Ecommerc...', Array, Array)
+#39 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Forms\\FormAbstract.php(577): Botble\\Base\\Forms\\FormBuilder->create('Botble\\\\Ecommerc...', Array, Array)
+#40 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Forms\\FormAbstract.php(582): Botble\\Base\\Forms\\FormAbstract::create(Array, Array)
+#41 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Http\\Controllers\\Fronts\\PublicCheckoutController.php(225): Botble\\Base\\Forms\\FormAbstract::createFromArray(Array)
+#42 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): Botble\\Ecommerce\\Http\\Controllers\\Fronts\\PublicCheckoutController->getCheckout('cd7f7e9a8e0d7db...', Object(Illuminate\\Http\\Request), Object(Botble\\Ecommerce\\Services\\HandleTaxService), Object(Botble\\Ecommerce\\Services\\HandleCheckoutOrderData))
+#43 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(43): Illuminate\\Routing\\Controller->callAction('getCheckout', Array)
+#44 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(265): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(Botble\\Ecommerce\\Http\\Controllers\\Fronts\\PublicCheckoutController), 'getCheckout')
+#45 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(211): Illuminate\\Routing\\Route->runController()
+#46 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(808): Illuminate\\Routing\\Route->run()
+#47 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(169): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\laragon\\www\\wiseshop\\platform\\plugins\\language\\src\\Http\\Middleware\\LocalizationRedirectFilter.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Language\\Http\\Middleware\\LocalizationRedirectFilter->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 C:\\laragon\\www\\wiseshop\\platform\\plugins\\language\\src\\Http\\Middleware\\LocaleSessionRedirect.php(32): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Language\\Http\\Middleware\\LocaleSessionRedirect->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\CoreMiddleware.php(17): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(169): Botble\\Base\\Http\\Middleware\\CoreMiddleware->Botble\\Base\\Http\\Middleware\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\EnsureLicenseHasBeenActivated.php(25): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\EnsureLicenseHasBeenActivated->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#56 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#57 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\CoreMiddleware.php(16): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#58 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\CoreMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#59 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Http\\Middleware\\TrackAbandonedCart.php(18): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#60 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Ecommerce\\Http\\Middleware\\TrackAbandonedCart->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#61 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Http\\Middleware\\CaptureCouponMiddleware.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#62 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Ecommerce\\Http\\Middleware\\CaptureCouponMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#63 C:\\laragon\\www\\wiseshop\\platform\\plugins\\ecommerce\\src\\Http\\Middleware\\CaptureFootprintsMiddleware.php(23): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#64 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Ecommerce\\Http\\Middleware\\CaptureFootprintsMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#65 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\HttpsProtocolMiddleware.php(16): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#66 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\HttpsProtocolMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#67 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\AdminLocaleMiddleware.php(17): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#68 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\AdminLocaleMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#69 C:\\laragon\\www\\wiseshop\\platform\\core\\base\\src\\Http\\Middleware\\LocaleMiddleware.php(29): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#70 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Base\\Http\\Middleware\\LocaleMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#71 C:\\laragon\\www\\wiseshop\\platform\\packages\\installer\\src\\Http\\Middleware\\RedirectIfNotInstalledMiddleware.php(17): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#72 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\Installer\\Http\\Middleware\\RedirectIfNotInstalledMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#73 C:\\laragon\\www\\wiseshop\\vendor\\barryvdh\\laravel-debugbar\\src\\Middleware\\InjectDebugbar.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#74 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#75 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#76 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#77 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(87): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#78 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#79 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#80 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#81 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(120): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#82 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(63): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#83 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#84 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(36): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#85 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#86 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(74): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#87 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#88 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#89 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(807): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#90 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(786): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#91 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(750): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#92 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(739): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#93 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#94 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(169): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#95 C:\\laragon\\www\\wiseshop\\platform\\core\\js-validation\\src\\RemoteValidationMiddleware.php(43): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#96 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Botble\\JsValidation\\RemoteValidationMiddleware->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#97 C:\\laragon\\www\\wiseshop\\vendor\\barryvdh\\laravel-debugbar\\src\\Middleware\\InjectDebugbar.php(59): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#98 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Barryvdh\\Debugbar\\Middleware\\InjectDebugbar->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#99 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#100 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#101 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#102 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#103 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#104 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#105 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#106 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#107 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(109): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#108 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#109 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(48): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#110 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#111 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(58): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#112 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#113 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks.php(22): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#114 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#115 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePathEncoding.php(26): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#116 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(208): Illuminate\\Http\\Middleware\\ValidatePathEncoding->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#117 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(126): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#118 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#119 C:\\laragon\\www\\wiseshop\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#120 C:\\laragon\\www\\wiseshop\\public\\index.php(23): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#121 {main}
+"} 

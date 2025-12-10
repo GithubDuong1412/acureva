@@ -1871,29 +1871,6 @@ input.text {
   margin-top: -70px;
 }
 
-.cat_style1 .categories_box a {
-  background-color: transparent;
-  padding: 0px;
-}
-
-.cat_style1 .categories_box span {
-  margin-top: 10px;
-}
-
-.cat_style1-dk .categories_box a {
-  background-color: transparent;
-  height: 100%;
-  padding: 0px;
-}
-
-.cat_style1-dk .categories_box .link-cate-text-line {
-  display: inline;
-}
-
-.cat_style1-dk .categories_box span {
-  margin-top: 10px;
-}
-
 /*===================================*
   05.END CATEGORIES STYLE
 *===================================*/
@@ -7665,5 +7642,28 @@ label {
 }
 
 .categories_box .dk-cat-img-wrapper:hover .link-cate-image {
-  transform: scale(1.08);
+  transform: scale(1.04);
+}
+
+.cat_style1 .categories_box a {
+  background-color: transparent;
+  padding: 0px;
+}
+
+.cat_style1 .categories_box span {
+  margin-top: 10px;
+}
+
+.cat_style1-dk .categories_box a {
+  background-color: transparent;
+  height: 100%;
+  padding: 0px;
+}
+
+.cat_style1-dk .categories_box .link-cate-text-line {
+  display: inline;
+}
+
+.cat_style1-dk .categories_box span {
+  margin-top: 10px;
 }

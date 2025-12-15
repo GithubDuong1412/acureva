@@ -356,7 +356,9 @@
             $('.add-to-cart-form .success-message').hide();
 
             if (res) {
-                const data = res.data
+                const data = res.data || {};
+                console.log(res);
+                console.log(data);
 
                 let buttonSubmit = $('.add-to-cart-form button[type=submit]');
                 if (res.error) {
@@ -365,7 +367,7 @@
                     $('#hidden-product-id').val('');
                 } else {
                     $('.add-to-cart-form').find('.error-message').hide();
-                    $('.product_price .product-sale-price-text').text(res.data.display_sale_price);
+                    $('.product_price .product-sale-price-text').text(data.display_sale_price);
                     if (data.sale_price !== data.price) {
                         $('.product_price .product-price-text').text(data.display_price).show();
                         $('.product_price .on_sale .on_sale_percentage_text').text(data.sale_percentage).show();
@@ -419,58 +421,56 @@
                         })
                     }
 
-                    let thumbHtml = '';
-                    data.image_with_sizes.thumb.forEach(function (item, index) {
-                        thumbHtml += '<div class="item"><a href="#" class="product_gallery_item ' + (index === 0 ? 'active' : '') + '" data-image="' + data.image_with_sizes.origin[index] + '" data-zoom-image="' + data.image_with_sizes.origin[index] + '"><img src="' + item + '" alt="image" loading="lazy" /></a></div>'
-                    });
+                    let slider = $('#pr_item_gallery')
+                    const selectedImage = data?.image_with_sizes?.origin?.[0]
 
-                    let slider = $('.slick_slider');
+                    if (slider.length && selectedImage) {
+                        let targetSlickIndex = null
 
-                    slider.slick('unslick');
+                        slider.find(`.product_gallery_item[data-image="${selectedImage}"]`).each(function () {
+                            const $slide = $(this).closest('.slick-slide')
+                            if ($slide.length) {
+                                const slickIndex = $slide.attr('data-slick-index')
+                                if (slickIndex !== undefined) {
+                                    targetSlickIndex = parseInt(slickIndex, 10)
+                                }
+                            }
+                        })
 
-                    slider.html(thumbHtml);
-
-                    slider.slick({
-                        rtl: $('body').prop('dir') === 'rtl',
-                        arrows: slider.data('arrows'),
-                        dots: slider.data('dots'),
-                        infinite: slider.data('infinite'),
-                        centerMode: slider.data('center-mode'),
-                        vertical: slider.data('vertical'),
-                        fade: slider.data('fade'),
-                        cssEase: slider.data('css-ease'),
-                        autoplay: slider.data('autoplay'),
-                        verticalSwiping: slider.data('vertical-swiping'),
-                        autoplaySpeed: slider.data('autoplay-speed'),
-                        speed: slider.data('speed'),
-                        pauseOnHover: slider.data('pause-on-hover'),
-                        draggable: slider.data('draggable'),
-                        slidesToShow: slider.data('slides-to-show'),
-                        slidesToScroll: slider.data('slides-to-scroll'),
-                        asNavFor: slider.data('as-nav-for'),
-                        focusOnSelect: slider.data('focus-on-select'),
-                        responsive: slider.data('responsive')
-                    });
-
-                    $(window).trigger('resize');
-
-                    let image = $('#product_img');
-                    image.prop('src', data.image_with_sizes.origin[0]).data('zoom-image', data.image_with_sizes.origin[0]);
-
-                    let zoomActive = image.data('zoom-enable');
-
-                    if ($(image).length > 0) {
-                        $(image).elevateZoom({
-                            cursor: 'crosshair',
-                            easing: true,
-                            gallery: 'pr_item_gallery',
-                            zoomType: 'inner',
-                            galleryActiveClass: 'active',
-                        });
-
-                        if (! zoomActive) {
-                            $(image).data('elevateZoom').changeState('disable');
+                        if (targetSlickIndex !== null && slider.hasClass('slick-initialized')) {
+                            slider.slick('slickGoTo', targetSlickIndex)
                         }
+
+                        slider.find('.product_gallery_item').removeClass('active')
+                        slider.find(`.product_gallery_item[data-image="${selectedImage}"]`).first().addClass('active')
+
+                        $(window).trigger('resize')
+
+                        let image = $('#product_img')
+                        image.prop('src', selectedImage).data('zoom-image', selectedImage)
+
+                        setTimeout(function () {
+                            if (image.data('elevateZoom')) {
+                                $.removeData(image, 'elevateZoom')
+                                $('.zoomContainer:last-child').remove()
+                            }
+
+                            let zoomActive = image.data('zoom-enable')
+
+                            if (image.length > 0) {
+                                image.elevateZoom({
+                                    cursor: 'crosshair',
+                                    easing: true,
+                                    gallery: 'pr_item_gallery',
+                                    zoomType: 'inner',
+                                    galleryActiveClass: 'active',
+                                })
+
+                                if (!zoomActive) {
+                                    image.data('elevateZoom').changeState('disable')
+                                }
+                            }
+                        }, 50)
                     }
                 }
             }

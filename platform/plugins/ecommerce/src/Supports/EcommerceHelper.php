@@ -897,11 +897,6 @@ class EcommerceHelper
                     ],
                     'take' => 1,
                 ]);
-
-                if ($productVariation && ! empty($params)) {
-                    $imageData = app(ProductImageService::class)->getProductImagesWithSizes($productVariation);
-                    $productImages = $imageData['images'];
-                }
             }
         }
 

@@ -360,15 +360,18 @@ $(function () {
       $('.add-to-cart-form .error-message').hide();
       $('.add-to-cart-form .success-message').hide();
       if (res) {
-        var data = res.data;
+        var data = res.data || {};
+        console.log(res);
+        console.log(data);
         var buttonSubmit = $('.add-to-cart-form button[type=submit]');
         if (res.error) {
           buttonSubmit.prop('disabled', true).addClass('btn-disabled');
           $('.number-items-available').html('<span class="text-danger">' + res.message + '</span>').show();
           $('#hidden-product-id').val('');
         } else {
+          var _data$image_with_size;
           $('.add-to-cart-form').find('.error-message').hide();
-          $('.product_price .product-sale-price-text').text(res.data.display_sale_price);
+          $('.product_price .product-sale-price-text').text(data.display_sale_price);
           if (data.sale_price !== data.price) {
             $('.product_price .product-price-text').text(data.display_price).show();
             $('.product_price .on_sale .on_sale_percentage_text').text(data.sale_percentage).show();
@@ -412,49 +415,46 @@ $(function () {
               }
             });
           }
-          var thumbHtml = '';
-          data.image_with_sizes.thumb.forEach(function (item, index) {
-            thumbHtml += '<div class="item"><a href="#" class="product_gallery_item ' + (index === 0 ? 'active' : '') + '" data-image="' + data.image_with_sizes.origin[index] + '" data-zoom-image="' + data.image_with_sizes.origin[index] + '"><img src="' + item + '" alt="image" loading="lazy" /></a></div>';
-          });
-          var slider = $('.slick_slider');
-          slider.slick('unslick');
-          slider.html(thumbHtml);
-          slider.slick({
-            rtl: $('body').prop('dir') === 'rtl',
-            arrows: slider.data('arrows'),
-            dots: slider.data('dots'),
-            infinite: slider.data('infinite'),
-            centerMode: slider.data('center-mode'),
-            vertical: slider.data('vertical'),
-            fade: slider.data('fade'),
-            cssEase: slider.data('css-ease'),
-            autoplay: slider.data('autoplay'),
-            verticalSwiping: slider.data('vertical-swiping'),
-            autoplaySpeed: slider.data('autoplay-speed'),
-            speed: slider.data('speed'),
-            pauseOnHover: slider.data('pause-on-hover'),
-            draggable: slider.data('draggable'),
-            slidesToShow: slider.data('slides-to-show'),
-            slidesToScroll: slider.data('slides-to-scroll'),
-            asNavFor: slider.data('as-nav-for'),
-            focusOnSelect: slider.data('focus-on-select'),
-            responsive: slider.data('responsive')
-          });
-          $(window).trigger('resize');
-          var image = $('#product_img');
-          image.prop('src', data.image_with_sizes.origin[0]).data('zoom-image', data.image_with_sizes.origin[0]);
-          var zoomActive = image.data('zoom-enable');
-          if ($(image).length > 0) {
-            $(image).elevateZoom({
-              cursor: 'crosshair',
-              easing: true,
-              gallery: 'pr_item_gallery',
-              zoomType: 'inner',
-              galleryActiveClass: 'active'
+          var slider = $('#pr_item_gallery');
+          var selectedImage = data === null || data === void 0 || (_data$image_with_size = data.image_with_sizes) === null || _data$image_with_size === void 0 || (_data$image_with_size = _data$image_with_size.origin) === null || _data$image_with_size === void 0 ? void 0 : _data$image_with_size[0];
+          if (slider.length && selectedImage) {
+            var targetSlickIndex = null;
+            slider.find(".product_gallery_item[data-image=\"".concat(selectedImage, "\"]")).each(function () {
+              var $slide = $(this).closest('.slick-slide');
+              if ($slide.length) {
+                var slickIndex = $slide.attr('data-slick-index');
+                if (slickIndex !== undefined) {
+                  targetSlickIndex = parseInt(slickIndex, 10);
+                }
+              }
             });
-            if (!zoomActive) {
-              $(image).data('elevateZoom').changeState('disable');
+            if (targetSlickIndex !== null && slider.hasClass('slick-initialized')) {
+              slider.slick('slickGoTo', targetSlickIndex);
             }
+            slider.find('.product_gallery_item').removeClass('active');
+            slider.find(".product_gallery_item[data-image=\"".concat(selectedImage, "\"]")).first().addClass('active');
+            $(window).trigger('resize');
+            var image = $('#product_img');
+            image.prop('src', selectedImage).data('zoom-image', selectedImage);
+            setTimeout(function () {
+              if (image.data('elevateZoom')) {
+                $.removeData(image, 'elevateZoom');
+                $('.zoomContainer:last-child').remove();
+              }
+              var zoomActive = image.data('zoom-enable');
+              if (image.length > 0) {
+                image.elevateZoom({
+                  cursor: 'crosshair',
+                  easing: true,
+                  gallery: 'pr_item_gallery',
+                  zoomType: 'inner',
+                  galleryActiveClass: 'active'
+                });
+                if (!zoomActive) {
+                  image.data('elevateZoom').changeState('disable');
+                }
+              }
+            }, 50);
           }
         }
       }

@@ -874,13 +874,27 @@
         event.preventDefault();
         event.stopPropagation();
         let currentVal = parseInt($(this).next('.qty').val(), 10);
-        if (currentVal > 0) {
-            $(this).next('.qty').val(currentVal - 1);
+        const $qtyInput = $(this).next('.qty')
+
+        if ($(this).closest('.form--shopping-cart').length && currentVal <= 1) {
+            const removeUrl = $(this).closest('tr').find('.remove-cart-button').prop('href')
+            if (removeUrl) {
+                $('.confirm-remove-item-cart').data('url', removeUrl)
+                let removeModal = document.getElementById('remove-item-modal')
+                if (removeModal) {
+                    let modal = new bootstrap.Modal(removeModal)
+                    modal.show()
+                }
+                $qtyInput.val(1)
+                return
+            }
         }
 
-        if (currentVal >= 0) {
+        if (currentVal > 1) {
+            $qtyInput.val(currentVal - 1)
+
             if ($(this).closest('.form--shopping-cart').length) {
-                ajaxUpdateCart($(this));
+                ajaxUpdateCart($(this))
             }
         }
     });

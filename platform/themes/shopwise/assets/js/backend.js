@@ -349,6 +349,9 @@
             if (data && data.attributes) {
                 $('.add-to-cart-form button[type=submit]').prop('disabled', true).addClass('btn-disabled');
             }
+
+            window.__bbSwatchesRequestId = (window.__bbSwatchesRequestId || 0) + 1;
+            window.__bbSwatchesImageReady = false;
         }
 
         window.onChangeSwatchesSuccess = function (res) {
@@ -357,8 +360,7 @@
 
             if (res) {
                 const data = res.data || {};
-                console.log(res);
-                console.log(data);
+                const requestId = window.__bbSwatchesRequestId || 0;
 
                 let buttonSubmit = $('.add-to-cart-form button[type=submit]');
                 if (res.error) {
@@ -386,7 +388,8 @@
                     }
 
                     $('#hidden-product-id').val(data.id);
-                    buttonSubmit.prop('disabled', false).removeClass('btn-disabled');
+
+                    const selectedImage = data?.image_with_sizes?.origin?.[0]
 
                     if (data.error_message) {
                         buttonSubmit.prop('disabled', true).addClass('btn-disabled');
@@ -422,7 +425,15 @@
                     }
 
                     let slider = $('#pr_item_gallery')
-                    const selectedImage = data?.image_with_sizes?.origin?.[0]
+
+                    const enableAddToCartIfAllowed = () => {
+                        if (data.error_message) {
+                            buttonSubmit.prop('disabled', true).addClass('btn-disabled')
+                            return
+                        }
+
+                        buttonSubmit.prop('disabled', false).removeClass('btn-disabled')
+                    }
 
                     if (slider.length && selectedImage) {
                         let targetSlickIndex = null
@@ -447,7 +458,29 @@
                         $(window).trigger('resize')
 
                         let image = $('#product_img')
-                        image.prop('src', selectedImage).data('zoom-image', selectedImage)
+                        window.__bbSwatchesImageReady = false
+                        buttonSubmit.prop('disabled', true).addClass('btn-disabled')
+
+                        const preloader = new Image()
+                        preloader.onload = function () {
+                            if ((window.__bbSwatchesRequestId || 0) !== requestId) {
+                                return
+                            }
+
+                            image.prop('src', selectedImage).data('zoom-image', selectedImage)
+                            window.__bbSwatchesImageReady = true
+                            enableAddToCartIfAllowed()
+                        }
+                        preloader.onerror = function () {
+                            if ((window.__bbSwatchesRequestId || 0) !== requestId) {
+                                return
+                            }
+
+                            image.prop('src', selectedImage).data('zoom-image', selectedImage)
+                            window.__bbSwatchesImageReady = true
+                            enableAddToCartIfAllowed()
+                        }
+                        preloader.src = selectedImage
 
                         setTimeout(function () {
                             if (image.data('elevateZoom')) {
@@ -471,6 +504,9 @@
                                 }
                             }
                         }, 50)
+                    } else {
+                        window.__bbSwatchesImageReady = true
+                        enableAddToCartIfAllowed()
                     }
                 }
             }
@@ -481,6 +517,11 @@
             event.stopPropagation();
 
             let _self = $(this);
+
+            if (window.__bbSwatchesImageReady === false) {
+                _self.prop('disabled', true).addClass('btn-disabled');
+                return;
+            }
 
             if (!$('#hidden-product-id').val()) {
                 _self.prop('disabled', true).addClass('btn-disabled');

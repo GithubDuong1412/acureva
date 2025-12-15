@@ -355,14 +355,15 @@ $(function () {
       if (data && data.attributes) {
         $('.add-to-cart-form button[type=submit]').prop('disabled', true).addClass('btn-disabled');
       }
+      window.__bbSwatchesRequestId = (window.__bbSwatchesRequestId || 0) + 1;
+      window.__bbSwatchesImageReady = false;
     };
     window.onChangeSwatchesSuccess = function (res) {
       $('.add-to-cart-form .error-message').hide();
       $('.add-to-cart-form .success-message').hide();
       if (res) {
         var data = res.data || {};
-        console.log(res);
-        console.log(data);
+        var requestId = window.__bbSwatchesRequestId || 0;
         var buttonSubmit = $('.add-to-cart-form button[type=submit]');
         if (res.error) {
           buttonSubmit.prop('disabled', true).addClass('btn-disabled');
@@ -388,7 +389,7 @@ $(function () {
             $('.product_description #product-sku').hide();
           }
           $('#hidden-product-id').val(data.id);
-          buttonSubmit.prop('disabled', false).removeClass('btn-disabled');
+          var selectedImage = data === null || data === void 0 || (_data$image_with_size = data.image_with_sizes) === null || _data$image_with_size === void 0 || (_data$image_with_size = _data$image_with_size.origin) === null || _data$image_with_size === void 0 ? void 0 : _data$image_with_size[0];
           if (data.error_message) {
             buttonSubmit.prop('disabled', true).addClass('btn-disabled');
             $('.number-items-available').html('<span class="text-danger">' + data.error_message + '</span>').show();
@@ -416,7 +417,13 @@ $(function () {
             });
           }
           var slider = $('#pr_item_gallery');
-          var selectedImage = data === null || data === void 0 || (_data$image_with_size = data.image_with_sizes) === null || _data$image_with_size === void 0 || (_data$image_with_size = _data$image_with_size.origin) === null || _data$image_with_size === void 0 ? void 0 : _data$image_with_size[0];
+          var enableAddToCartIfAllowed = function enableAddToCartIfAllowed() {
+            if (data.error_message) {
+              buttonSubmit.prop('disabled', true).addClass('btn-disabled');
+              return;
+            }
+            buttonSubmit.prop('disabled', false).removeClass('btn-disabled');
+          };
           if (slider.length && selectedImage) {
             var targetSlickIndex = null;
             slider.find(".product_gallery_item[data-image=\"".concat(selectedImage, "\"]")).each(function () {
@@ -435,7 +442,26 @@ $(function () {
             slider.find(".product_gallery_item[data-image=\"".concat(selectedImage, "\"]")).first().addClass('active');
             $(window).trigger('resize');
             var image = $('#product_img');
-            image.prop('src', selectedImage).data('zoom-image', selectedImage);
+            window.__bbSwatchesImageReady = false;
+            buttonSubmit.prop('disabled', true).addClass('btn-disabled');
+            var preloader = new Image();
+            preloader.onload = function () {
+              if ((window.__bbSwatchesRequestId || 0) !== requestId) {
+                return;
+              }
+              image.prop('src', selectedImage).data('zoom-image', selectedImage);
+              window.__bbSwatchesImageReady = true;
+              enableAddToCartIfAllowed();
+            };
+            preloader.onerror = function () {
+              if ((window.__bbSwatchesRequestId || 0) !== requestId) {
+                return;
+              }
+              image.prop('src', selectedImage).data('zoom-image', selectedImage);
+              window.__bbSwatchesImageReady = true;
+              enableAddToCartIfAllowed();
+            };
+            preloader.src = selectedImage;
             setTimeout(function () {
               if (image.data('elevateZoom')) {
                 $.removeData(image, 'elevateZoom');
@@ -455,6 +481,9 @@ $(function () {
                 }
               }
             }, 50);
+          } else {
+            window.__bbSwatchesImageReady = true;
+            enableAddToCartIfAllowed();
           }
         }
       }
@@ -463,6 +492,10 @@ $(function () {
       event.preventDefault();
       event.stopPropagation();
       var _self = $(this);
+      if (window.__bbSwatchesImageReady === false) {
+        _self.prop('disabled', true).addClass('btn-disabled');
+        return;
+      }
       if (!$('#hidden-product-id').val()) {
         _self.prop('disabled', true).addClass('btn-disabled');
         return;

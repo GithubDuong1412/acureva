@@ -307,6 +307,9 @@ app()->booted(function (): void {
 
         shortcode()->registerLoadingState('product-blocks', Theme::getThemeNamespace('partials.shortcodes.product-blocks-skeleton'));
 
+
+        // Begin - All Products
+
         add_shortcode('all-products', __('All Products'), __('All Products'), function (Shortcode $shortcode) {
             $products = get_products([
                 'paginate' => [
@@ -315,23 +318,46 @@ app()->booted(function (): void {
                 ],
             ] + EcommerceHelper::withReviewsParams());
 
-            return Theme::partial('shortcodes.all-products', [
+            return Theme::partial('shortcodes.all-products.index', [
                 'title' => $shortcode->title,
                 'products' => $products,
+                'shortcode' => $shortcode,
             ]);
         });
+
 
         shortcode()->setAdminConfig('all-products', function (array $attributes) {
             return ShortcodeForm::createFromArray($attributes)
                 ->withLazyLoading()
+
                 ->add('title', TextField::class, TextFieldOption::make()
-                    ->label(__('Title')))
+                    ->label(__('Title'))
+                    ->toArray()
+                )
+
                 ->add('per_page', NumberField::class, NumberFieldOption::make()
-                    ->label(__('Number of products per page'))
-                    ->defaultValue(12));
+                    ->label(__('Total products / Number of products per page.'))
+                    ->defaultValue(12)
+                    ->toArray()
+                )
+
+                ->add('style', SelectField::class, SelectFieldOption::make()
+                    ->label(__('Style'))
+                    ->choices([
+                        'style-1' => __('Style 1'),
+                        'style-2' => __('Style 2 DK'),
+                    ])
+                    ->defaultValue($attributes['style'] ?? 'style-1')
+                    ->toArray()
+                );
         });
 
-        shortcode()->registerLoadingState('all-products', Theme::getThemeNamespace('partials.shortcodes.all-products-skeleton'));
+        shortcode()->registerLoadingState(
+            'all-products',
+            Theme::getThemeNamespace('partials.shortcodes.all-products-skeleton')
+        );
+
+        // End - All Products
 
         add_shortcode('all-brands', __('All Brands'), __('All Brands'), function (Shortcode $shortcode) {
             $brands = get_all_brands();

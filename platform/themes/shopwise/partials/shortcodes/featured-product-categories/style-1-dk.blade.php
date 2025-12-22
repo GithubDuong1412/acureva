@@ -37,11 +37,44 @@
                             $wrapperClass .= ' ratio-auto';
                             break;
                     }
+
+
+                    $totalCategories = $categories->count();
+                    $itemsMobile = min(2, $totalCategories);
+                    $itemsTablet = min(3, $totalCategories);
+                    $itemsDesktop = $totalCategories;
+
+                    $sliderMobile = $totalCategories > 2;
+                    $sliderTablet = $totalCategories > 3;
+                    $sliderDesktop = false;
+
+                    $responsiveItem = [
+                        0 => [
+                            'items' => $itemsMobile,
+                            'loop' => $sliderMobile,
+                            'nav' => $sliderMobile,
+                        ],
+                        480 => [
+                            'items' => $itemsTablet,
+                            'loop' => $sliderTablet,
+                            'nav' => $sliderTablet,
+                        ],
+                        768 => [
+                            'items' => $itemsDesktop,
+                            'loop' => false,
+                            'nav' => false,
+                        ],
+                    ];
+
                 ?>
 
                 <div class="cat_slider cat_style1-dk mt-4 mt-md-0 dk-feature_categories carousel_slider owl-carousel owl-theme nav_style5"
-                     data-loop="false" data-dots="false" data-nav="true" data-margin="30"
-                     data-responsive='{"0":{"items": "2"}, "480":{"items": "3"}, "576":{"items": "3"}, "768":{"items": "4"}, "991":{"items": "4"}, "1199":{"items": "4"}}'>
+                     data-loop="{{  ($sliderMobile || $sliderTablet) ? 'true' : 'false'  }}" 
+                     data-dots="false" 
+                     data-nav="{{  ($sliderMobile || $sliderTablet) ? 'true' : 'false'  }}" 
+                     data-margin="30"
+                     data-responsive='@json($responsiveItem)'>
+                     
                     @foreach ($categories as $category)
                         <div class="item d-flex">
                             <div class="categories_box d-flex">

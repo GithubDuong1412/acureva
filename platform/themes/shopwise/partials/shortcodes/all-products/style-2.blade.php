@@ -27,31 +27,6 @@
 
 <style>
 
-    .all-products.style-2 .all-products-item {
-        display: flex;
-    }
-
-    .all-products.style-2 .all-products-item .product_wrap {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .all-products.style-2 .all-products-item .product_wrap .product_info {
-        flex: 1 1 auto;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .all-products.style-2 .all-products-item .product_wrap .product_info .product_title {
-        min-height: 2.8em;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-    }
-
     @media screen and (max-width: 767px) {
         .all-products.style-2 .all-products-wrapper {
             display: flex;

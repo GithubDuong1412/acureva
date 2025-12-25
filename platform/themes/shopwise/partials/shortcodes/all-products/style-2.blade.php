@@ -1,13 +1,17 @@
-<div class="section pt-0 all-products style-2">
+<div class="section pt-4 all-products style-2">
     <div class="container">
         @if ($title)
             <div class="heading_tab_header">
-                <div class="heading_s2">
-                    <h2 class="h4">{!! BaseHelper::clean($title) !!}</h2>
+                <div class="heading_s4">
+                    <h2>{!! BaseHelper::clean($title) !!}</h2>
                 </div>
+                <p>
+                    @if ($shortcode->description)
+                        {!! BaseHelper::clean($shortcode->description) !!}
+                    @endif
+                </p>
             </div>
         @endif
-
         @if ($products->isNotEmpty())
             <div class="row all-products-wrapper" >
                 @foreach ($products as $product)
@@ -17,7 +21,6 @@
                 @endforeach
             </div>
 
-
         @endif
 
 
@@ -26,7 +29,6 @@
 
 
 <style>
-
     @media screen and (max-width: 767px) {
         .all-products.style-2 .all-products-wrapper {
             display: flex;
@@ -45,12 +47,5 @@
             scroll-snap-align: start;
         }
 
-        /* Hide Scroll */
-        /* .all-products.style-2 .all-products-wrapper::-webkit-scrollbar {
-            display: none;
-        }
-        .all-products.style-2 .all-products-wrapper {
-            scrollbar-width: none;
-        } */
     }
 </style>

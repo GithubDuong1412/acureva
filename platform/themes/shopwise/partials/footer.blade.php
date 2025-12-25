@@ -2,8 +2,8 @@
         <div class="footer_top">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                        <div class="widget">
+                    <div class="col-lg-6 col-md-12 col-sm-12 dk-footer-infor  pt-4">
+                        <div class="widget widget-infor">
                             @if (theme_option('logo_footer') || theme_option('logo'))
                                 <div class="footer_logo">
                                     <a href="{{ route('public.single') }}">
@@ -29,8 +29,7 @@
                                 </ul>
                             </div>
                         @endif
-                        <div class="widget">
-                            <!-- <h3 class="widget_title">{{ __('Contact Info') }}</h3> -->
+                        <div class="widget widget-infor">
                             <ul class="contact_info contact_info_light">
                                 @if (theme_option('company-name'))
                                     <li>
@@ -66,43 +65,6 @@
                         </div>
                     </div>
                     {!! dynamic_sidebar('footer_sidebar') !!}
-                    <!-- <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="widget">
-                            <h3 class="widget_title">{{ __('Contact Info') }}</h3>
-                            <ul class="contact_info contact_info_light">
-                                @if (theme_option('company-name'))
-                                    <li>
-                                        <i class="ti-briefcase"></i>
-                                        <p>{{ theme_option('company-name') }}</p>
-                                    </li>
-                                @endif
-                                @if (theme_option('address'))
-                                    <li>
-                                        <i class="ti-location-pin"></i>
-                                        <p>{{ theme_option('address') }}</p>
-                                    </li>
-                                @endif
-                                @if (theme_option('email'))
-                                    <li>
-                                        <i class="ti-email"></i>
-                                        <a href="mailto:{{ theme_option('email') }}">{{ theme_option('email') }}</a>
-                                    </li>
-                                @endif
-                                @if (theme_option('hotline'))
-                                    <li>
-                                        <i class="ti-mobile"></i>
-                                        <p>{{ theme_option('hotline') }}</p>
-                                    </li>
-                                @endif
-                                @if (theme_option('support-hour'))
-                                    <li>
-                                        <i class="ti-headphone"></i>
-                                        <p>{{ theme_option('support-hour') }}</p>
-                                    </li>
-                                @endif
-                            </ul>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>

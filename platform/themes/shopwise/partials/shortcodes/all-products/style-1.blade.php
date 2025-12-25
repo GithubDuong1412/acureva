@@ -2,9 +2,14 @@
     <div class="container">
         @if ($title)
             <div class="heading_tab_header">
-                <div class="heading_s2">
-                    <h2 class="h4">{!! BaseHelper::clean($title) !!}</h2>
+                <div class="heading_s4">
+                    <h2>{!! BaseHelper::clean($title) !!}</h2>
                 </div>
+                <p>
+                    @if ($shortcode->description)
+                        {!! BaseHelper::clean($shortcode->description) !!}
+                    @endif
+                </p>
             </div>
         @endif
         @if ($products->isNotEmpty())

@@ -335,6 +335,11 @@ app()->booted(function (): void {
                     ->toArray()
                 )
 
+                ->add('description', TextField::class, TextFieldOption::make()
+                    ->label(__('Description'))
+                    ->toArray()
+                )
+
                 ->add('per_page', NumberField::class, NumberFieldOption::make()
                     ->label(__('Total products / Number of products per page.'))
                     ->defaultValue(12)

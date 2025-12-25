@@ -86,13 +86,47 @@
                 @extend %product-layout
             }
         }
+
+        .product {
+            width: 100%;
+            @extend %product-layout;
+        }
+    }
+}
+
+
+.product_wrap, .product{
+    .product_info {
+        text-align: center;
+
+        .rating_wrap {
+            display: none;
+        }
+    }
+}
+
+
+.all-products.style-2 {
+    .heading_tab_header {
+        flex-direction: column;
+
+        p { 
+            margin-bottom: 6px !important;
+        }
     }
 }
 
 
 // ======================================= HEADER =======================================
+#page-home {
+    .dk-header_wrap-custom {
+        margin-bottom: -15px !important;
+    }
+}
+
 
 .dk-header_wrap-custom {
+
     .top-header {
         .row {
             ul > li {
@@ -164,15 +198,25 @@
     .footer_top {
         .widget_title {
             font-size: 28px;
-            margin-top: 30px;
-            margin-bottom: 38px;
+            margin-top: 42px;
+            margin-bottom: 32px;
         }
+    }
+
+    .dk-footer-infor {
+        border: 1px solid var(--color-1st);
+        box-shadow: inset 0px 0px 14px 4px var(--color-1st);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .dk-footer.footer_dark .footer_top .widget_title {
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 }
 
 
-
-// ======================================= CONTACT-PAGE =======================================
 
 
 
@@ -212,7 +256,6 @@
 
 .dk-cat-img-wrapper {
     overflow: hidden;
-    // background-color: grey;
     padding: 0 0 35px 0;
 
     &.ratio-1-1 {
@@ -267,5 +310,24 @@
     margin-top: 10px;
 }
 
+
+
+
+
+// ======================================= Footer ====================================
+.dk-footer {
+    .footer_logo {
+        margin-bottom: 10px;
+
+        img {
+            max-width: 320px ;
+        }
+    }
+
+    .widget-infor {
+        width: 100%;
+        text-align: center;
+    }
+}
 
 // -----------------------------------------------------

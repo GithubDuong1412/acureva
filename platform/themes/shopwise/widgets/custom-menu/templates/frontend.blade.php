@@ -1,4 +1,4 @@
-<div class="col-lg-3 col-md-6 col-sm-12 d-flex justify-content-center">
+<div class="col-lg-2 col-md-4 col-sm-12 d-flex justify-content-center pt-4">
     <div class="widget">
         <h3 class="widget_title">{{ $config['name'] }}</h3>
         {!!

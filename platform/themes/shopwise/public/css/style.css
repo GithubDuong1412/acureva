@@ -7658,9 +7658,12 @@ label {
   margin-top: 42px;
   margin-bottom: 32px;
 }
-.dk-footer.footer_dark .dk-footer-infor {
-  border: 1px solid var(--color-1st);
-  box-shadow: inset 0px 0px 14px 4px var(--color-1st);
+
+.dk-footer .footer_logo {
+  margin-bottom: 10px;
+}
+.dk-footer .footer_logo img {
+  max-width: 320px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -7745,15 +7748,4 @@ label {
 
 .cat_style1-dk .categories_box span {
   margin-top: 10px;
-}
-
-.dk-footer .footer_logo {
-  margin-bottom: 10px;
-}
-.dk-footer .footer_logo img {
-  max-width: 320px;
-}
-.dk-footer .widget-infor {
-  width: 100%;
-  text-align: center;
 }

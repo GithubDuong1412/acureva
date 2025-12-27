@@ -2,7 +2,7 @@
         <div class="footer_top">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 col-md-12 col-sm-12 dk-footer-infor  pt-4">
+                    <div class="col-lg-3 col-md-6 col-sm-12 dk-footer-infor pt-4">
                         <div class="widget widget-infor">
                             @if (theme_option('logo_footer') || theme_option('logo'))
                                 <div class="footer_logo">

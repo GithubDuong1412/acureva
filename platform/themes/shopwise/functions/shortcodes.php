@@ -181,6 +181,109 @@ app()->booted(function (): void {
         shortcode()->registerLoadingState('product-collections', Theme::getThemeNamespace('partials.shortcodes.product-collections-skeleton'));
 
         add_shortcode(
+            'product-collection-details',
+            __('Product Collection Details'),
+            __('Display products from a single collection'),
+
+            function (Shortcode $shortcode) {
+                if( ! $shortcode->collection_id) {
+                    return null;
+                }
+
+                $collection = ProductCollection::query()
+                    ->wherePublished()
+                    ->where('id', $shortcode->collection_id)
+                    ->first();
+
+                if( ! $collection) {
+                    return null;
+                }
+
+                $products = get_products_by_collections(
+                    array_merge([
+                        'collections' => [
+                            'by' => 'id',
+                            'value_in' => [$collection->id], 
+                        ],
+                        'take' => (int) ($shortcode->limit ?: 8),
+                        'with' => EcommerceHelper::withProductEagerLoadingRelations(),
+                    ], EcommerceHelper::withReviewsParams())
+                );
+
+                return Theme::partial(
+                    'shortcodes.product-collection-details.index',
+                    compact('shortcode', 'collection', 'products')
+                );
+            }
+        );
+
+        shortcode()->setAdminConfig('product-collection-details', function (array $attributes) {
+            $collections = ProductCollection::query()
+                ->wherePublished()
+                ->pluck('name', 'id')
+                ->all();
+
+            $collectionOptions = ['' => '-- ' . __('Selection collection') . ' --'] + $collections;
+
+            return ShortcodeForm::createFromArray($attributes)
+                ->add('title', TextField::class, TextFieldOption::make()
+                    ->label(__('Title'))
+                )
+
+                ->add('limit', NumberField::class, NumberFieldOption::make()
+                    ->label(__('Number of products'))
+                    ->defaultValue(8)
+                    ->toArray()
+                )
+
+                ->add('collection_id', SelectField::class, SelectFieldOption::make() 
+                    ->label(__('Choose Product Collecion'))
+                    ->choices($collectionOptions)
+                    ->toArray()
+                )
+
+                ->add('columns_desktop', NumberField::class, NumberFieldOption::make()
+                    ->label(__('Column (Desktop)'))
+                    ->defaultValue(4)
+                    ->toArray()
+                )
+
+                ->add('columns_tablet', NumberField::class, NumberFieldOption::make()
+                    ->label(__('Column (Tablet)'))
+                    ->defaultValue(3)
+                    ->toArray()
+                )
+
+                ->add('columns_mobile', NumberField::class, NumberFieldOption::make()
+                    ->label(__('Column (Mobile)'))
+                    ->defaultValue(2)
+                    ->toArray()
+                )
+
+                ->add('style', SelectField::class, SelectFieldOption::make()
+                    ->label(__('Style'))
+                    ->choices([
+                        'style-1' => __('Style 1'),
+                        'style-2' => __('Style 2'),
+                    ])
+                    ->defaultValue('style-1')
+                    ->toArray()
+                )
+
+                ->add('lazy_loading', SelectField::class, SelectFieldOption::make()
+                    ->label(__('Enable lazy loading'))
+                    ->choices([
+                        'yes' => __('Yes'),
+                        'no' => __('No'),
+                    ])
+                    ->toArray()
+                );
+        });
+
+        shortcode()->registerLoadingState('product-collection-details', Theme::getThemeNamespace('partials.shortcodes.product-collection-details-skeleton'));
+
+
+        add_shortcode(
             'trending-products',
             __('Trending Products'),
             __('Trending Products'),

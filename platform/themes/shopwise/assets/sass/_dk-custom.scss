@@ -202,10 +202,14 @@
             margin-bottom: 32px;
         }
     }
+}
+.dk-footer {
+    .footer_logo {
+        margin-bottom: 10px;
 
-    .dk-footer-infor {
-        border: 1px solid var(--color-1st);
-        box-shadow: inset 0px 0px 14px 4px var(--color-1st);
+        img {
+            max-width: 320px ;
+        }
     }
 }
 
@@ -315,19 +319,6 @@
 
 
 // ======================================= Footer ====================================
-.dk-footer {
-    .footer_logo {
-        margin-bottom: 10px;
 
-        img {
-            max-width: 320px ;
-        }
-    }
-
-    .widget-infor {
-        width: 100%;
-        text-align: center;
-    }
-}
 
 // -----------------------------------------------------

@@ -2,7 +2,7 @@
     @php $menu_nodes->loadMissing('metadata'); @endphp
     @foreach ($menu_nodes as $key => $row)
         <li @if ($row->has_child || $row->css_class || $row->active) class="@if ($row->has_child) dropdown @endif @if ($row->css_class) {{ $row->css_class }} @endif @if ($row->active) active @endif" @endif>
-            <a class="@if ($row->has_child) dropdown-toggle nav-link @else nav-link nav_item @endif" href="{{ $row->has_child ? '#' : url($row->url) }}" @if ($row->target !== '_self') target="{{ $row->target }}" @endif @if ($row->has_child) data-bs-toggle="dropdown" @endif>
+            <a class="@if ($row->has_child) dropdown-toggle nav-link @else nav-link nav_item @endif" href="{{ url($row->url) }}" @if ($row->target !== '_self') target="{{ $row->target }}" @endif @if ($row->has_child) data-bs-toggle="dropdown" @endif>
                 {!! $row->icon_html !!}{{ $row->title }}
             </a>
             @if ($row->has_child)

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*=========================================================
 Author       : Bestwebcreator.
 Template Name: Shopwise - eCommerce Bootstrap 4 HTML Template
@@ -4704,7 +4705,7 @@ body .owl-theme .owl-nav [class*=owl-] {
     padding: 100px 0;
   }
   .footer_top {
-    padding: 80px 0 50px;
+    padding: 30px 0 30px;
   }
   .blog_meta li {
     margin-right: 10px;
@@ -4832,8 +4833,8 @@ body .owl-theme .owl-nav [class*=owl-] {
     transform: rotate(90deg);
   }
   .dropdown-menu.dropdown-reverse {
-    left: auto;
-    right: 0;
+    left: 0;
+    right: auto;
   }
   .dd_dark_skin .navbar .navbar-nav .dropdown-item,
   .dd_dark_skin .cart_list a, .dd_dark_skin .cart_quantity, .dd_dark_skin .cart_total {
@@ -5447,7 +5448,7 @@ body .owl-theme .owl-nav [class*=owl-] {
     padding: 30px 0;
   }
   .footer_top {
-    padding: 60px 0 40px;
+    padding: 50px 0 30px;
   }
   .heading_s1 {
     margin-bottom: 15px;
@@ -7652,24 +7653,45 @@ label {
 .dk-dropdown_menu > li {
   padding: 2px 40px 2px 10px;
 }
-
+@media only screen and (max-width: 767px) {
+  .dk-header_wrap-custom .bottom_header-categories {
+    display: none;
+  }
+  .dk-header_wrap-custom .bottom_header-subnav .navbar {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .dk-header_wrap-custom .bottom_header-subnav .navbar .navbar-toggler {
+    margin: 0px;
+  }
+}
+.dk-footer.footer_dark .footer_top .widget-infor {
+  margin-top: 14px;
+}
 .dk-footer.footer_dark .footer_top .widget_title {
-  font-size: 28px;
-  margin-top: 42px;
-  margin-bottom: 32px;
+  font-size: 24px;
+  margin-bottom: 24px;
 }
 
 .dk-footer .footer_logo {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .dk-footer .footer_logo img {
-  max-width: 320px;
+  width: 360px;
 }
 
 @media only screen and (max-width: 767px) {
   .dk-footer.footer_dark .footer_top .widget_title {
     margin-top: 15px;
     margin-bottom: 15px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .dk-footer .footer_top .dk-footer-infor {
+    order: -5;
+  }
+  .dk-footer .footer_top .dk-footer-logo {
+    order: -10;
   }
 }
 .dk-contacts-infor > [class*=col-] {
@@ -7749,3 +7771,10 @@ label {
 .cat_style1-dk .categories_box span {
   margin-top: 10px;
 }
+
+/* ===== 5 columns grid (12 / 5 = 2.4) ===== */
+
+/* ≥576px */
+/* ≥768px */
+/* ≥992px */
+/* ≥1200px */

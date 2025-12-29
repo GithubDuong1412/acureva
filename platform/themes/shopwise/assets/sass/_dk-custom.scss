@@ -148,30 +148,13 @@
         }
     }
 
-    // .middle-header {
-    //     z-index: 10000;
-    // }
-
-    // .bottom_header:not(.fixed-top) {
-    //     // z-index: 999;
-
-    //     .categories_wrap {
-    //         z-index: 9999;
-    //     }
-
-    //     .navbar {
-    //         z-index: 1001;
-    //     }
-    //     .navbar-toggler.side_navbar_toggler {
-    //         z-index: 1002;
-    //     }
-    // }
-
-
-
-
-
 }
+
+
+
+
+
+
 #navCatContent .close-icon {
    position: absolute;
    top: 15px;
@@ -193,22 +176,61 @@
     }
 }
 
+@media only screen and (min-width: 768px) {
+    .mobile-d-block {
+        display: none !important;
+    }
+    .mobile-d-none {
+        display: block !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .dk-header_wrap-custom {
+        .bottom_header-categories {
+            display: none;
+        }
+        .bottom_header-subnav {
+            .navbar {
+                display: flex;
+                flex-direction: row-reverse;
+
+                .navbar-toggler {
+                    margin: 0px;
+                }
+            }
+        }
+    }
+    .mobile-d-none {
+        display: none !important;
+    }
+    .mobile-d-block {
+        display: block !important;
+    }
+}
+
+
+
+
+
 // ======================================= FOOTER =======================================
 .dk-footer.footer_dark {
     .footer_top {
+        .widget-infor {
+            margin-top: 14px;
+        }
         .widget_title {
-            font-size: 28px;
-            margin-top: 42px;
-            margin-bottom: 32px;
+            font-size: 24px;
+            margin-bottom: 24px;
         }
     }
 }
 .dk-footer {
     .footer_logo {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
 
         img {
-            max-width: 320px ;
+            width: 360px;
         }
     }
 }
@@ -220,7 +242,18 @@
     }
 }
 
-
+@media only screen and (max-width: 767px) {
+    .dk-footer {
+        .footer_top {
+            .dk-footer-infor {
+                order: -5;
+            }
+            .dk-footer-logo {
+                order: -10;
+            }
+        }
+    }
+}
 
 
 
@@ -321,4 +354,42 @@
 // ======================================= Footer ====================================
 
 
-// -----------------------------------------------------
+// ======================= GRID: 5 COLUMNS (12 / 5 = 2.4) ====================
+/* ===== 5 columns grid (12 / 5 = 2.4) ===== */
+
+.col-2-4 {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+/* ≥576px */
+@media (min-width: 576px) {
+    .col-sm-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+
+/* ≥768px */
+@media (min-width: 768px) {
+    .col-md-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+
+/* ≥992px */
+@media (min-width: 992px) {
+    .col-lg-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+
+/* ≥1200px */
+@media (min-width: 1200px) {
+    .col-xl-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}

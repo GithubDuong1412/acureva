@@ -192,7 +192,7 @@
         <div class="bottom_header light_skin main_menu_uppercase @if (! Theme::get('transparentHeader')) bg_dark @endif @if (url()->current() === route('public.index')) @endif">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-4">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-4 bottom_header-categories">
                         @if (is_plugin_active('ecommerce'))
                             <div class="categories_wrap">
                                 <button type="button" data-bs-toggle="collapse" data-bs-target="#navCatContent" aria-expanded="false" class="categories_btn">
@@ -215,7 +215,7 @@
                             </div>
                         @endif
                     </div>
-                    <div class="col-lg-9 col-md-8 col-sm-6 col-8">
+                    <div class="col-lg-9 col-md-8 col-sm-12 col-12 bottom_header-subnav">
                         @include(Theme::getThemeNamespace('partials.header-menu'))
                     </div>
                 </div>

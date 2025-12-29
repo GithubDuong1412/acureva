@@ -53,41 +53,6 @@
     </div>
 </div>
 
-<!-- 
-<li class=" dropdown   ">
-    <a class="dropdown-toggle nav-link show" href="http://acureva.test/en/products" data-bs-toggle="dropdown" aria-expanded="true">
-        Products
-    </a>
-    
-    <div class="dropdown-menu dropdown-reverse show" data-bs-popper="static">
-        <ul>
-            <li>
-                <a class=" dropdown-item menu-link " href="http://acureva.test/en/mental-health-humor-collection">
-                    Mental Health Humor Collection
-                </a>
-            </li>
-            <li>
-                <a class=" dropdown-item menu-link " href="http://acureva.test/en/dilly-dally-collection">
-                    Dilly Dally Collection
-                </a>
-            </li>
-            <li>
-                <a class=" dropdown-item menu-link " href="http://acureva.test/en/introvert-humor-collection">
-                    Introvert Humor Collection
-                </a>
-            </li>
-        </ul>
-    </div>
-</li>
-
-
-
-
-<li>
-    <a class=" nav-link nav_item " href="http://acureva.test/en/products">
-        Products
-    </a>
-</li> -->
 
 
 

@@ -1,0 +1,18 @@
+@media only screen and (min-width: 768px) {
+    .mobile-d-block {
+        display: none !important;
+    }
+    .mobile-d-none {
+        display: block !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    
+    .mobile-d-none {
+        display: none !important;
+    }
+    .mobile-d-block {
+        display: block !important;
+    }
+}

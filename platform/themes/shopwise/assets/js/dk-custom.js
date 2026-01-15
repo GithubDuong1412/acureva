@@ -35,9 +35,19 @@
         });
     }
 
+    function moveProductSizeGuide() {
+        const sizeGuide = document.getElementById('product-size-guide');
+        const statusOfProducts = document.querySelector('.number-items-available');
+
+        if(sizeGuide && statusOfProducts) {
+            statusOfProducts.insertAdjacentElement('afterend', sizeGuide);
+        }
+    }
+
     $(document).ready(function () {
         fixContactFormLayout();
         initAllProductsStyle1Slider();
+        moveProductSizeGuide();
     });
 
     $(window).on('resize', initAllProductsStyle1Slider);

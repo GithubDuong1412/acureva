@@ -8,7 +8,7 @@
                 </div>
                 <div class="contact_text">
                     <span>{{ __('Company Name') }}</span>
-                    <p>{{ theme_option('company-name') }}</p>
+                    <p>{!! theme_option('company-name') !!}</p>
                 </div>
             </div>
         </div>

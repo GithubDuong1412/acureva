@@ -92,5 +92,11 @@
                 </div>
             </div>
         </div>
+
+        @if ($shortcode->link)
+            <div class="dk-product_button">
+                <a href="{{ url($shortcode->link) }}" class="btn btn-fill-out">{!! BaseHelper::clean($shortcode->link_text ?: __('View All')) !!}</a>
+            </div>
+        @endif
     </div>
 </div>

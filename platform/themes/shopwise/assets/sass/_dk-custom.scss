@@ -26,7 +26,91 @@
 }
 
 
+.dk-product_button {
+    text-align: center;
+    margin-top: 24px;
+}
 
+// ============== Style - Border Card Item Product ===============
+
+.dk-product-collection-1  {
+    .tab_slider.tab-content {
+        .owl-stage {
+            .owl-item {
+                .item {
+                    position: relative;
+                    border-radius: 20px;
+                    // padding: 10px;
+                    overflow: hidden;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        background-image: linear-gradient(180deg, #ff00c8, cyan);
+                        animation: animateDK 6s linear infinite;
+                        transition: all .3s linear;
+                        width: 100px;
+                        height: 130%;
+                        top: 50%;
+                        left: 50%;
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        inset: 5px;
+                        // background-color: #141414;
+                        border-radius: 15px;
+                    }
+
+                    .product_wrap {
+                        border-radius: 20px;
+
+                        .product_img {
+                            border-radius: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@keyframes animateDK {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+// ===================Style - Product Collection ===================
+.section-full_width-custom {
+        background-color: #000;
+
+        .nav-link {
+            background-color: transparent !important;
+        }
+
+        .nav-link.active {
+            .pc-collection-tab__title {
+                color: var(--color-1st);
+            }
+        }
+
+        .heading_s1 > h2, .pc-collection-tab__title {
+            color: #fff;
+        }
+}
+
+@media screen and (max-width: 576px) {
+    #tabmenubar, #tabmenubar-style-1-dk {
+        justify-content: flex-start !important;
+    }
+}
 
 
 // =================== Adjust Product-Item Balance ==================
@@ -109,6 +193,8 @@
 .all-products.style-2 {
     .heading_tab_header {
         flex-direction: column;
+        border-bottom: 0px;
+        margin-bottom: 12px;
 
         p { 
             margin-bottom: 6px !important;
@@ -210,6 +296,17 @@
 }
 
 
+.mobile-menu-item-dk {
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px dashed #eaeaea;
+
+    .header_list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
 
 
 
@@ -347,8 +444,68 @@
     margin-top: 10px;
 }
 
+.categories_box {
+    .link-cate-image {
+        img {
+            border-radius: 8px;
+        }
+    }
+}
 
 
+// ===================== Compare Page =========================
+
+.dk-compare_box {
+    tbody {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid var(--bs-border-width);
+
+        tr {
+            display: flex;
+            width: 100%;
+
+            td.row_title {
+                max-width: 200px;
+                min-width: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            td:not(:first-child) {
+                flex: 1;
+                max-width: 280px;
+                min-width: 280px;
+            }
+            td.product_price {
+                margin-bottom: 0px;
+            }
+
+            .product_name {
+                a {
+                    font-size: 16px;
+                }
+            }
+            .attribute-values {
+                ul {
+                    display: flex;
+                    justify-content: space-evenly;
+
+                    li {
+                        input.form-control { height: 35px; }
+                    }
+                }
+            }
+        }
+    }
+    .table-bordered>:not(caption)>* {
+        border: 1px solid #000;
+        border-width: 0px;
+    }
+    .table-bordered>:not(caption)>*>* {
+        border: 1px solid #000;
+    }
+}
 
 
 // ======================================= Footer ====================================

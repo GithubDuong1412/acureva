@@ -36,7 +36,7 @@
                                             </div>
                                         </td>
                                         <td class="product-remove" data-title="{{ __('Add to cart') }}">
-                                            <a class="btn btn-fill-out btn-sm add-to-cart-button" data-id="{{ $product->id }}" href="#" data-url="{{ route('public.cart.add-to-cart') }}">{{ __('Add to cart') }}</a>
+                                            <a class="btn btn-fill-out btn-sm popup-ajax" href="{{ route('public.ajax.quick-view', $product->id) }}" rel="nofollow">{{ __('Add to cart') }}</a>
                                         </td>
                                         <td class="product-remove" data-title="{{ __('Remove') }}">
                                             <a class="btn btn-dark btn-sm js-remove-from-wishlist-button" href="#" data-url="{{ route('public.wishlist.remove', $product->id) }}">{{ __('Remove') }}</a>

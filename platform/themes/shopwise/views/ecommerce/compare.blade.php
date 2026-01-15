@@ -130,7 +130,7 @@
                                             <td class="row_title">{{ __('Buy now') }}</td>
                                             @foreach($products as $product)
                                                 <td class="row_btn">
-                                                    <a class="btn btn-fill-out add-to-cart-button" data-id="{{ $product->id }}" href="#" data-url="{{ route('public.cart.add-to-cart') }}">
+                                                    <a class="btn btn-fill-out popup-ajax" href="{{ route('public.ajax.quick-view', $product->id) }}" rel="nofollow">
                                                         <i class="icon-basket-loaded"></i> {{ __('Add To Cart') }}
                                                     </a>
                                                 </td>

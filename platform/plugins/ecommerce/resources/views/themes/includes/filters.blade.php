@@ -1,7 +1,7 @@
 @if (EcommerceHelper::hasAnyProductFilters())
     @php
         $dataForFilter = EcommerceHelper::dataForFilter($category ?? null);
-        [$categories, $brands, $tags, $rand, $categoriesRequest, $urlCurrent, $categoryId, $maxFilterPrice, $collections] = $dataForFilter;
+        [$categories, $brands, $tags, $rand, $categoriesRequest, $urlCurrent, $categoryId, $maxFilterPrice] = $dataForFilter;
     @endphp
 
     <div class="bb-shop-sidebar">
@@ -20,11 +20,6 @@
 
             @if (EcommerceHelper::isEnabledFilterProductsByTags())
                 @include(EcommerceHelper::viewPath('includes.filters.tags'))
-            @endif
-
-            <!-- Add Filter Collections -->
-             @if (EcommerceHelper::isEnabledFilterProductsByCollections())
-                @include(EcommerceHelper::viewPath('includes.filters.collections'))
             @endif
 
             @if (EcommerceHelper::isEnabledFilterProductsByPrice() && (! EcommerceHelper::hideProductPrice() || EcommerceHelper::isCartEnabled()))

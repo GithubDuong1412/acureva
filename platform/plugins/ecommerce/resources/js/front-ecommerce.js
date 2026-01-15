@@ -239,6 +239,12 @@ class Ecommerce {
                 form.find('input[name="page"]').remove()
                 form.find('input[name="per-page"]').remove()
 
+                // Reset attribute filters when changing categories
+                // (avoid keeping invalid attributes in query when switching categories)
+                form
+                    .find('input[name^="attributes["]')
+                    .remove()
+
                 if (categoriesInput.length && categoryId) {
                     // If using array notation
                     if (categoriesInput.attr('name') === 'categories[]') {

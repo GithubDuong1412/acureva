@@ -21,13 +21,15 @@ class ShopwiseController extends PublicController
             return $response->setNextUrl(route('public.index'));
         }
 
+        $limit = (int) $request->input('limit', 10);
+
         $products = get_products_by_collections(
             [
                 'collections' => [
                     'by' => 'id',
                     'value_in' => [$request->input('collection_id')],
                 ],
-                'take' => 10,
+                'take' => $limit,
                 'with' => [
                     'slugable',
                     'variations',

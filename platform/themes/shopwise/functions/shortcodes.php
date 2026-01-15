@@ -4,10 +4,12 @@ use Botble\Ads\Facades\AdsManager;
 use Botble\Ads\Models\Ads;
 use Botble\Base\Enums\BaseStatusEnum;
 use Botble\Base\Forms\FieldOptions\MediaImageFieldOption;
+use Botble\Base\Forms\FieldOptions\HtmlFieldOption;
 use Botble\Base\Forms\FieldOptions\NumberFieldOption;
 use Botble\Base\Forms\FieldOptions\SelectFieldOption;
 use Botble\Base\Forms\FieldOptions\TextareaFieldOption;
 use Botble\Base\Forms\FieldOptions\TextFieldOption;
+use Botble\Base\Forms\Fields\HtmlField;
 use Botble\Base\Forms\Fields\MediaImageField;
 use Botble\Base\Forms\Fields\NumberField;
 use Botble\Base\Forms\Fields\SelectField;
@@ -57,10 +59,10 @@ app()->booted(function (): void {
                 ->add('subtitle', TextareaField::class, TextareaFieldOption::make()
                     ->label(__('Subtitle'))
                     ->rows(3))
-                ->add('link', TextField::class, TextFieldOption::make()
-                    ->label(__('Link')))
                 ->add('link_text', TextField::class, TextFieldOption::make()
                     ->label(__('Link text')))
+                ->add('link', TextField::class, TextFieldOption::make()
+                    ->label(__('Link')))
                 ->add('style', SelectField::class, SelectFieldOption::make()
                     ->label(__('Style'))
                     ->choices([
@@ -111,7 +113,7 @@ app()->booted(function (): void {
             function (Shortcode $shortcode) {
                 $collections = ProductCollection::query()
                     ->wherePublished()
-                    ->select('id', 'name', 'slug')
+                    ->select('id', 'name', 'slug', 'image')
                     ->get();
 
                 if ($collections->isEmpty()) {
@@ -123,7 +125,7 @@ app()->booted(function (): void {
                     $collectionId = $shortcode->collection_id;
                 }
 
-                $limit = (int) $shortcode->limit ?: 10;
+                $limit = (int) ($shortcode->total_items ?: ($shortcode->limit ?: 10));
 
                 $products = get_products_by_collections(
                     array_merge([
@@ -171,9 +173,53 @@ app()->booted(function (): void {
                 ->label(__('Style'))
                 ->choices([
                     'style-1' => __('Style 1'),
+                    'style-1-dk' => __('Style DK-1'),
                     'style-5' => __('Style 5'),
                     'style-6' => __('Style 6'),
                 ]));
+
+            $form->add('total_items', NumberField::class, NumberFieldOption::make()
+                ->label(__('Total Item'))
+                ->defaultValue(10)
+                ->attributes(['min' => 1])
+                ->toArray());
+
+            $form->add('add_image', SelectField::class, SelectFieldOption::make()
+                ->label(__('Add Image'))
+                ->choices([
+                    'no' => __('No'),
+                    'yes' => __('Yes'),
+                ])
+                ->defaultValue('no'));
+
+            $form->add('items_row_open', HtmlField::class, HtmlFieldOption::make()
+                ->content('<div class="row">')
+                ->toArray());
+
+            $form->add('items_desktop', NumberField::class, NumberFieldOption::make()
+                ->label(__('Items (Desktop)'))
+                ->defaultValue(4)
+                ->attributes(['min' => 1])
+                ->wrapperAttributes(['class' => 'col-12 col-sm-4'])
+                ->toArray());
+
+            $form->add('items_tablet', NumberField::class, NumberFieldOption::make()
+                ->label(__('Items (Tablet)'))
+                ->defaultValue(2)
+                ->attributes(['min' => 1])
+                ->wrapperAttributes(['class' => 'col-12 col-sm-4'])
+                ->toArray());
+
+            $form->add('items_mobile', NumberField::class, NumberFieldOption::make()
+                ->label(__('Items (Mobile)'))
+                ->defaultValue(1)
+                ->attributes(['min' => 1])
+                ->wrapperAttributes(['class' => 'col-12 col-sm-4'])
+                ->toArray());
+
+            $form->add('items_row_close', HtmlField::class, HtmlFieldOption::make()
+                ->content('</div>')
+                ->toArray());
 
             return $form;
         });

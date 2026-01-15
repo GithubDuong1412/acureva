@@ -17,13 +17,29 @@
         </li>
     @endforeach
 
-    <li class="mobile-menu-item mobile-menu-item-first-item">
+    <li class="mobile-menu-item mobile-menu-item-dk">
+        @if (is_plugin_active('ecommerce'))
+            <ul class="header_list">
+                @if (EcommerceHelper::isCompareEnabled())
+                    <li><a href="{{ route('public.compare') }}"><i class="ti-control-shuffle"></i><span>{{ __('Compare') }}</span></a></li>
+                @endif
+                @if (!auth('customer')->check())
+                    <li><a href="{{ route('customer.login') }}"><i class="ti-user"></i><span>{{ __('Login') }}</span></a></li>
+                @else
+                    <li><a href="{{ route('customer.overview') }}"><i class="ti-user"></i><span>{{ auth('customer')->user()->name }}</span></a></li>
+                    <li><a href="{{ route('customer.logout') }}"><i class="ti-lock"></i><span>{{ __('Logout') }}</span></a></li>
+                @endif
+            </ul>
+        @endif
+    </li>
+
+    <!-- <li class="mobile-menu-item mobile-menu-item-first-item">
         @if (is_plugin_active('language'))
             <div class="language-wrapper">
                 {!! Theme::partial('language-switcher') !!}
             </div>
         @endif
-    </li>
+    </li> -->
     <li class="mobile-menu-item">
         @if (is_plugin_active('ecommerce'))
             @php $currencies = get_all_currencies(); @endphp

@@ -54,6 +54,21 @@ app()->booted(function (): void {
         }, 124);
     }
 });
+function getButtonIcons(): array
+{
+    return [
+        '' => __('None'),
+        'ti-arrow-right' => __('Arrow Right'),
+        'ti-arrow-left' => __('Arrow Left'),
+        'ti-angle-right' => __('Angle Right'),
+        'ti-angle-left' => __('Angle Left'),
+        'ti-plus' => __('Plus'),
+        'ti-minus' => __('Minus'),
+        'ti-shopping-cart' => __('Cart'),
+        'ti-eye' => __('View'),
+    ];
+}
+
 
 
 // use Botble\Ecommerce\Facades\CartFacade as Cart;

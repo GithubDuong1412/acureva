@@ -55,21 +55,21 @@
                                                 </td>
                                                 <td class="product-name" data-title="{{ __('Product') }}">
                                                     <a href="{{ $product->original_product->url }}" title="{{ $product->name }}">{{ $product->name }}  @if ($product->isOutOfStock()) <span class="stock-status-label">({!! $product->stock_status_html !!})</span> @endif</a>
+                                                    @php
+                                                        $size  = data_get($cartItem->options, 'attributes.size');
+                                                        $color = data_get($cartItem->options, 'attributes.color');
+                                                    @endphp
+
                                                     <p style="margin-bottom: 0">
-                                                        <small>Size: {{ $cartItem->options['attributes']['size']  }}</small>
-                                                        <small>Color: {{ $cartItem->options['attributes']['color'] }}</small>                                                    </p>
+                                                        @if ($size)
+                                                            <small>Size: {{ $size }}</small>
+                                                        @endif
 
-                                                    @if (!empty($cartItem->options['options']))
-                                                        {!! render_product_options_info($cartItem->options['options'], $product, true) !!}
-                                                    @endif
+                                                        @if ($color)
+                                                            <small>Color: {{ $color }}</small>
+                                                        @endif
+                                                    </p>
 
-                                                    @if (!empty($cartItem->options['extras']) && is_array($cartItem->options['extras']))
-                                                        @foreach($cartItem->options['extras'] as $option)
-                                                            @if (!empty($option['key']) && !empty($option['value']))
-                                                                <p style="margin-bottom: 0;"><small>{{ $option['key'] }}: <strong> {{ $option['value'] }}</strong></small></p>
-                                                            @endif
-                                                        @endforeach
-                                                    @endif
                                                 </td>
                                                 <td class="product-price" data-title="{{ __('Price') }}">
                                                     <div class="product__price @if ($product->front_sale_price != $product->price) sale @endif">

@@ -491,8 +491,10 @@ PAGE JS
             let config = {
                 rtl: isRTL,
                 dots: $carousel.data('dots'),
+                dotsEach: $carousel.data('dots-each'),
                 loop: $carousel.data('loop'),
                 items: $carousel.data('items'),
+                slideBy: $carousel.data('slide-by'),
                 margin: $carousel.data('margin'),
                 mouseDrag: $carousel.data('mouse-drag'),
                 touchDrag: $carousel.data('touch-drag'),

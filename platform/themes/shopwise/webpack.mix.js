@@ -34,6 +34,7 @@ mix
                     /^owl-/,
                     /^ui-/,
                     /^mfp-/,
+                    /^dk-/,
                     /^button-loading/,
                     /text/,
                     /shadow/,

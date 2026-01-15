@@ -5,6 +5,7 @@ namespace Botble\Ecommerce\Supports;
 use Botble\Base\Models\BaseQueryBuilder;
 use Botble\Ecommerce\Facades\EcommerceHelper as EcommerceHelperFacade;
 use Botble\Ecommerce\Models\ProductAttributeSet;
+use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
@@ -18,9 +19,19 @@ class RenderProductAttributeSetsOnSearchPageSupport
 
     public function getAttributeSets(): Collection
     {
+        $categoryIds = array_filter((array) $this->request->input('categories', []));
+
         $with = [
             'categories:id',
-            'attributes' => fn (HasMany $query) => $query->whereHas('productVariationItems'),
+            'attributes' => fn (HasMany $query) => $query
+                ->whereHas('productVariationItems', function (EloquentBuilder $query) use ($categoryIds): void {
+                    $query->when($categoryIds, function (EloquentBuilder $query) use ($categoryIds): void {
+                        $query->whereHas(
+                            'productVariation.configurableProduct.categories',
+                            fn (EloquentBuilder $query) => $query->whereIn('ec_product_categories.id', $categoryIds)
+                        );
+                    });
+                }),
         ];
 
         if (is_plugin_active('language') && is_plugin_active('language-advanced')) {
@@ -42,12 +53,20 @@ class RenderProductAttributeSetsOnSearchPageSupport
             })
             ->oldest('order')
             ->with($with)
-            ->get();
+            ->get()
+            ->filter(fn (ProductAttributeSet $attributeSet) => $attributeSet->attributes->isNotEmpty())
+            ->values();
     }
 
     public function getSelectedAttributes(Collection $attributeSets): array
     {
         $selectedAttrs = [];
+
+        $allowedAttributesBySetSlug = $attributeSets
+            ->mapWithKeys(fn (ProductAttributeSet $attributeSet) => [$attributeSet->slug => $attributeSet->attributes->pluck('id')->all()])
+            ->all();
+
+        $allowedAttributes = collect($allowedAttributesBySetSlug)->flatten()->map(fn ($id) => (int) $id)->all();
 
         $attributesInput = (array) $this->request->input('attributes', []);
 
@@ -59,10 +78,11 @@ class RenderProductAttributeSetsOnSearchPageSupport
                     continue;
                 }
 
-                $selectedAttrs[$attributeSet->slug] = $attributeInput;
+                $allowed = array_map('intval', $allowedAttributesBySetSlug[$attributeSet->slug] ?? []);
+                $selectedAttrs[$attributeSet->slug] = array_values(array_intersect($allowed, array_map('intval', array_filter($attributeInput))));
             }
         } else {
-            $selectedAttrs = $attributesInput;
+            $selectedAttrs = array_values(array_intersect($allowedAttributes, array_map('intval', array_filter($attributesInput))));
         }
 
         return $selectedAttrs;

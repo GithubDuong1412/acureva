@@ -56,20 +56,23 @@
                                                 <td class="product-name" data-title="{{ __('Product') }}">
                                                     <a href="{{ $product->original_product->url }}" title="{{ $product->name }}">{{ $product->name }}  @if ($product->isOutOfStock()) <span class="stock-status-label">({!! $product->stock_status_html !!})</span> @endif</a>
                                                     @php
-                                                        $size  = data_get($cartItem->options, 'attributes.size');
-                                                        $color = data_get($cartItem->options, 'attributes.color');
+                                                        $size  = data_get($cartItem->options, 'attributes.size', '');
+                                                        $color = data_get($cartItem->options, 'attributes.color', '');
                                                     @endphp
 
                                                     <p style="margin-bottom: 0">
-                                                        @if ($size)
+                                                        @if (!empty($size))
                                                             <small>Size: {{ $size }}</small>
                                                         @endif
 
-                                                        @if ($color)
+                                                        @if (!empty($color))
                                                             <small>Color: {{ $color }}</small>
                                                         @endif
                                                     </p>
 
+                                                    @if (!empty($cartItem->options['options']))
+                                                        {!! render_product_options_info($cartItem->options['options'], $product, true) !!}
+                                                    @endif
                                                 </td>
                                                 <td class="product-price" data-title="{{ __('Price') }}">
                                                     <div class="product__price @if ($product->front_sale_price != $product->price) sale @endif">

@@ -37,6 +37,8 @@ use Botble\Ecommerce\Models\OrderAddress;
 use Botble\Ecommerce\Models\OrderHistory;
 use Botble\Ecommerce\Models\OrderProduct;
 use Botble\Ecommerce\Models\Product;
+use Botble\Ecommerce\Models\ProductVariation;
+use Botble\Ecommerce\Models\ProductVariationItem;
 use Botble\Ecommerce\Models\Shipment;
 use Botble\Ecommerce\Models\ShipmentHistory;
 use Botble\Ecommerce\Models\ShippingRule;
@@ -633,27 +635,60 @@ class OrderHelper
         }
 
         $image = $product->image ?: $parentProduct->image;
-        $test= [];
-        $attrisizetest = DB::table('ec_product_attributes')
-            ->where('id', $request->attribute_size)
-            ->get();
-      
-            foreach ($attrisizetest as $attr) {
-                $size = $attr->title;
+        $test = [];
+        $size = null;
+        $color = null;
+
+        if ($request->filled('attribute_size')) {
+            $attrisizetest = DB::table('ec_product_attributes')
+                ->where('id', $request->input('attribute_size'))
+                ->first();
+
+            if ($attrisizetest) {
+                $size = $attrisizetest->title;
             }
-        $attricolortest = DB::table('ec_product_attributes')
-            ->where('id', $request->attribute_color)
-            ->get();
-      
-            foreach ($attricolortest as $attr) {
-                $color = $attr->title;              
+        }
+
+        if ($request->filled('attribute_color')) {
+            $attricolortest = DB::table('ec_product_attributes')
+                ->where('id', $request->input('attribute_color'))
+                ->first();
+
+            if ($attricolortest) {
+                $color = $attricolortest->title;
             }
-    $test = [
-   
-        'size'  => $size,
-        'color' => $color,
-    
-        ];
+        }
+
+        if (empty($size) || empty($color)) {
+            $variation = ProductVariation::query()
+                ->where('product_id', $product->getKey())
+                ->select(['id'])
+                ->first();
+
+            if ($variation) {
+                $variationAttributes = ProductVariationItem::getVariationsInfo([$variation->getKey()])
+                    ->groupBy('attribute_set_slug')
+                    ->map(function ($items) {
+                        return $items->first()->title;
+                    })
+                    ->all();
+
+                if (empty($size) && ! empty($variationAttributes['size'])) {
+                    $size = $variationAttributes['size'];
+                }
+
+                if (empty($color) && ! empty($variationAttributes['color'])) {
+                    $color = $variationAttributes['color'];
+                }
+            }
+        }
+
+        $test = array_filter([
+            'size' => $size,
+            'color' => $color,
+        ], function ($value) {
+            return $value !== null && $value !== '';
+        });
         /**
          * Add cart to session
          */

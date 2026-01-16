@@ -24,8 +24,12 @@
                         <a href="{{ route('public.cart.remove', $cartItem->rowId) }}" class="item_remove remove-cart-button"><i class="ion-close"></i></a>
                         <a href="{{ $product->original_product->url }}"><img src="{{ RvMedia::getImageUrl($cartItem->options->image, 'thumb', false, RvMedia::getDefaultImage()) }}" alt="{{ $product->name }}"  loading="lazy" /> {{ $product->name }}  @if ($product->isOutOfStock()) <span class="stock-status-label">({!! $product->stock_status_html !!})</span> @endif</a>
                         <p style="margin-bottom: 0; line-height: 20px; color: #fff;">
-                                 <small>Size: {{ $cartItem->options['attributes']['size']  }}</small>
-                                                        <small>Color: {{ $cartItem->options['attributes']['color'] }}</small>      
+                            @if (!empty($cartItem->options['attributes']) && !empty($cartItem->options['attributes']['size']))
+                                <small>Size: {{ $cartItem->options['attributes']['size'] }}</small>
+                            @endif
+                            @if (!empty($cartItem->options['attributes']) && !empty($cartItem->options['attributes']['color']))
+                                <small>Color: {{ $cartItem->options['attributes']['color'] }}</small>
+                            @endif
                         </p>
 
                         @if (!empty($cartItem->options['options']))

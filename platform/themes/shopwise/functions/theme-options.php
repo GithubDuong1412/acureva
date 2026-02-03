@@ -234,6 +234,19 @@ app()->booted(function (): void {
                 'values' => theme_option('payment_methods', []),
             ],
         ])
+        ->setField([
+            'id' => 'payment_methods_text',
+            'section_id' => 'opt-text-subsection-ecommerce',
+            'type' => 'text',
+            'label' => 'Payment methods text',
+            'attributes' => [
+                'name' => 'payment_methods_text',
+                'value' => null,
+                'options' => [
+                    'class' => 'form-control',
+                ],
+            ],
+        ])
         ->setSection([
             'title' => __('Header'),
             'desc' => __('Options for header'),

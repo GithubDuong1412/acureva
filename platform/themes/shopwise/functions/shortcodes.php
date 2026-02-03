@@ -18,7 +18,9 @@ use Botble\Base\Forms\Fields\TextField;
 use Botble\Blog\Repositories\Interfaces\PostInterface;
 use Botble\Ecommerce\Facades\EcommerceHelper;
 use Botble\Ecommerce\Models\FlashSale;
+use Botble\Ecommerce\Models\ProductCategory;
 use Botble\Ecommerce\Models\ProductCollection;
+use Botble\Ecommerce\Repositories\Interfaces\ProductInterface;
 use Botble\Faq\Models\FaqCategory;
 use Botble\Shortcode\Compilers\Shortcode;
 use Botble\Shortcode\Forms\ShortcodeForm;
@@ -68,8 +70,9 @@ app()->booted(function (): void {
                     ->choices([
                         'style-1' => __('Style 1'),
                         'style-4' => __('Style 4'),
-                        'style-1-dk' => __('Style DK-1'),
-                        'style-4-dk' => __('Style DK-4'),
+                        'style-1-dk' => __('Style DK 1'),
+                        'style-2-dk' => __('Style DK 2'),
+                        'style-4-dk' => __('Style DK 4'),
                     ]))
                 ->add('image_aspect_ratio', SelectField::class, SelectFieldOption::make()
                     ->label(__('Image Aspect Ratio'))
@@ -105,6 +108,126 @@ app()->booted(function (): void {
         });
 
         shortcode()->registerLoadingState('featured-brands', Theme::getThemeNamespace('partials.shortcodes.featured-brands-skeleton'));
+
+        // Add: UI Block - Product Category Details
+
+        add_shortcode(  
+            'product-category-details',
+            __('Product Category Details'),
+            __('Display products from a single category'),
+
+            function (Shortcode $shortcode) {
+                if ( !$shortcode->category_id ) {
+                    return null;
+                }
+
+                $category = ProductCategory::query()
+                    ->wherePublished()
+                    ->where('id', $shortcode->category_id)
+                    ->first();
+
+                if ( !$category ) {
+                    return null;
+                }
+
+                $limit = (int) ($shortcode->total_items ?: ($shortcode->limit ?: 10));
+                $mobileLimit = (int) ($shortcode->total_items_mobile ?: $limit);
+                $take = max($limit, $mobileLimit);
+
+                $products = app(ProductInterface::class)->getProductsByCategories(
+                    array_merge([
+                        'categories' => [
+                            'by' => 'id',
+                            'value_in' => [$category->id],
+                        ],
+                        'take' => $take,
+                        'with' => EcommerceHelper::withProductEagerLoadingRelations(),
+                    ], EcommerceHelper::withReviewsParams())
+                );
+
+                return Theme::partial(
+                    'shortcodes.product-category-details.index',
+                    compact('shortcode', 'category', 'products', 'limit', 'mobileLimit')
+                );
+                
+            }
+
+        );
+
+        shortcode()->setAdminConfig('product-category-details', function (array $attributes) {
+            $categories = ProductCategory::query()
+                ->wherePublished()
+                ->pluck('name', 'id')
+                ->all();
+
+            $categoryOptions = ['' => '-- ' . __('Select') . ' --'] + $categories;
+
+            $form = ShortcodeForm::createFromArray($attributes)
+                ->withLazyLoading()
+                ->add('title', TextField::class, TextFieldOption::make()
+                    ->label(__('Title')));
+
+            $form->add('description', TextareaField::class, TextareaFieldOption::make()
+                ->label(__('Description'))
+                ->rows(3));
+
+            $form->add('category_id', SelectField::class, SelectFieldOption::make()
+                ->label(__('Choose Product Category'))
+                ->choices($categoryOptions)
+                ->toArray());
+
+            $form->add('style', SelectField::class, SelectFieldOption::make()
+                ->label(__('Style'))
+                ->choices([
+                    'style-1-dk' => __('Style DK 1'),
+                ])
+                ->defaultValue($attributes['style'] ?? 'style-1-dk')
+                ->toArray());
+
+            $form->add('total_items', NumberField::class, NumberFieldOption::make()
+                ->label(__('Total Items'))
+                ->defaultValue(10)
+                ->attributes(['min' => 1])
+                ->toArray());
+
+            $form->add('total_items_mobile', NumberField::class, NumberFieldOption::make()
+                ->label(__('Total Items (Mobile)'))
+                ->attributes(['min' => 1])
+                ->toArray());
+
+            $form->add('items_row_open', HtmlField::class, HtmlFieldOption::make()
+                ->content('<div class="row">')
+                ->toArray());
+
+            $form->add('items_desktop', NumberField::class, NumberFieldOption::make()
+                ->label(__('Items (Desktop)'))
+                ->defaultValue(4)
+                ->attributes(['min' => 1])
+                ->wrapperAttributes(['class' => 'col-12 col-sm-4'])
+                ->toArray());
+
+            $form->add('items_tablet', NumberField::class, NumberFieldOption::make()
+                ->label(__('Items (Tablet)'))
+                ->defaultValue(2)
+                ->attributes(['min' => 1])
+                ->wrapperAttributes(['class' => 'col-12 col-sm-4'])
+                ->toArray());
+
+            $form->add('items_mobile', NumberField::class, NumberFieldOption::make()
+                ->label(__('Items (Mobile)'))
+                ->defaultValue(1)
+                ->attributes(['min' => 1])
+                ->wrapperAttributes(['class' => 'col-12 col-sm-4'])
+                ->toArray());
+
+            $form->add('items_row_close', HtmlField::class, HtmlFieldOption::make()
+                ->content('</div>')
+                ->toArray());
+
+            return $form;
+        });
+
+        // End: UI Block - Product Category Details
 
         add_shortcode(
             'product-collections',
@@ -150,6 +273,10 @@ app()->booted(function (): void {
                 ->withLazyLoading()
                 ->add('title', TextField::class, TextFieldOption::make()
                     ->label(__('Title')));
+
+            $form->add('description', TextareaField::class, TextareaFieldOption::make()
+                ->label(__('Description'))
+                ->rows(3));
 
             if (is_plugin_active('ads')) {
                 $ads = Ads::query()
@@ -458,7 +585,6 @@ app()->booted(function (): void {
 
 
         // Begin - All Products
-
         add_shortcode('all-products', __('All Products'), __('All Products'), function (Shortcode $shortcode) {
             $products = get_products([
                 'paginate' => [
@@ -503,6 +629,13 @@ app()->booted(function (): void {
                     ])
                     ->defaultValue($attributes['style'] ?? 'style-1')
                     ->toArray()
+                )
+
+                ->add('link_text', TextField::class, TextFieldOption::make()
+                    ->label(__('Link text'))
+                )
+                ->add('link', TextField::class, TextFieldOption::make()
+                    ->label(__('Link'))
                 );
         });
 
@@ -679,6 +812,7 @@ app()->booted(function (): void {
             ->label(__('Style'))
             ->choices([
                 'style-1' => __('Style 1'),
+                'style-2-dk' => __('Style 2 DK'),
                 'style-3' => __('Style 3'),
             ]));
 
@@ -818,6 +952,7 @@ app()->booted(function (): void {
                     'style-4' => __('Style 4'),
                     'style-5' => __('Style 5'),
                     'style-6' => __('Style 6'),
+                    'style-7-dk' => __('Style 7 DK'),
                 ]));
 
             if (is_plugin_active('ads')) {

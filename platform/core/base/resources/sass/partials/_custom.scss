@@ -88,9 +88,14 @@
     }
 }
 
-.btn-icon {
-    min-height: calc(var(--bb-btn-line-height) * var(--bb-btn-font-size) + var(--bb-btn-padding-y) * 2 + var(--bb-btn-border-width) * 2);
-    min-width: calc(var(--bb-btn-line-height) * var(--bb-btn-font-size) + var(--bb-btn-padding-y) * 2 + var(--bb-btn-border-width) * 2);
+.btn-list, .btn-group {
+    .btn-icon {
+        min-height: calc(var(--bb-btn-line-height) * var(--bb-btn-font-size) + var(--bb-btn-padding-y) * 2 + var(--bb-btn-border-width) * 2);
+        min-width: calc(var(--bb-btn-line-height) * var(--bb-btn-font-size) + var(--bb-btn-padding-y) * 2 + var(--bb-btn-border-width) * 2);
+        
+        min-width: 80px;
+        min-height: 40px;
+    }
 }
 
 .btn-group-sm > .btn, .btn-sm {
@@ -98,7 +103,7 @@
     --bb-btn-padding-x: 0.5rem;
     --bb-btn-border-radius: 0.25rem;
     --bb-btn-icon-size: 1.25rem;
-    --bb-btn-line-height: 1.5;
+    --bb-btn-line-height: 1.5rem;
 }
 
 .dropdown-submenu {

@@ -1,7 +1,9 @@
 <div class="faqs-list">
     @foreach($categories as $categoryIndex => $category)
         @if (count($categories) > 1)
+        <div class="heading_s4">
             <h2 class="h4">{{ $category->name }}</h2>
+        </div>
         @endif
         <div class="accordion" id="faq-accordion-{{ $categoryIndex }}">
             @foreach($category->faqs as $faqIndex => $faq)

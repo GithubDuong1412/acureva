@@ -79,6 +79,13 @@ class ProductCategoryForm extends FormAbstract
                     ->label(trans('core/base::forms.description'))
                     ->allowedShortcodes()
             )
+            ->add(
+                'product_detail_content',
+                EditorField::class,
+                ContentFieldOption::make()
+                    ->label(__('Product Detail Content'))
+                    ->allowedShortcodes()
+            )
             ->add('status', SelectField::class, StatusFieldOption::make())
             ->add('image', MediaImageField::class, MediaImageFieldOption::make())
             ->add(

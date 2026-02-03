@@ -37,6 +37,10 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 dk-footer-infor pt-4">
                         <div class="widget widget-infor">
                             <ul class="contact_info contact_info_light">
+                                <li>
+                                    <i class="ti-world"></i>
+                                    <p>Website name: {{ theme_option('site_title') }}</p>
+                                </li>
                                 @if (theme_option('company-name'))
                                     <li>
                                         <i class="ti-briefcase"></i>
@@ -67,6 +71,13 @@
                                         <p>{!! theme_option('support-hour') !!}</p>
                                     </li>
                                 @endif
+                                <li>
+                                    <i class="ti-sharethis-alt"></i>
+                                    <p>
+                                        Contact Form:
+                                        <a href="{{ route('public.single', 'contact-us') }}">Here</a>
+                                    </p>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -80,13 +91,18 @@
                         <p class="mb-md-0 text-center text-md-start text-lg-start">{!! Theme::getSiteCopyright() !!}</p>
                     </div>
                     <div class="col-md-6">
-                        <ul class="footer_payment text-center text-md-end text-lg-end">
-                            @foreach(json_decode(theme_option('payment_methods', []), true) as $method)
-                                @if (!empty($method))
-                                    <li><img src="{{ RvMedia::getImageUrl($method) }}" alt="payment method" loading="lazy" /></li>
-                                @endif
-                            @endforeach
-                        </ul>
+                        <div class="footer_payments-group d-flex align-items-center justify-content-center justify-content-md-end justify-content-lg-end">
+                            @if (theme_option('payment_methods_text'))
+                                <span class="text-payments">{!! theme_option('payment_methods_text') !!}</span>
+                            @endif
+                            <ul class="footer_payment text-center text-md-end text-lg-end mb-0">
+                                @foreach(json_decode(theme_option('payment_methods', []), true) as $method)
+                                    @if (!empty($method))
+                                        <li><img src="{{ RvMedia::getImageUrl($method) }}" alt="payment method" loading="lazy" /></li>
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

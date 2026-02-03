@@ -6,6 +6,9 @@
             	<div class="heading_s1 text-center">
                 	<h2>{!! BaseHelper::clean($shortcode->title) !!}</h2>
                 </div>
+                @if ($shortcode->description)
+					<p  class="text-center">{!! BaseHelper::clean($shortcode->description) !!}</p>
+				@endif
             </div>
 		</div>
         <div class="row">

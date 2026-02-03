@@ -148,6 +148,15 @@
 
                         {!! Theme::renderSocialSharing($product->url, SeoHelper::getDescription(), $product->image) !!}
                     </div>
+                    
+                        @php
+                            $primaryCategory = $product->categories->sortByDesc('id')->first();
+                        @endphp
+                        @if ($primaryCategory && $primaryCategory->product_detail_content)
+
+                                {!! \Botble\Shortcode\Facades\Shortcode::compile($primaryCategory->product_detail_content, true)->toHtml() !!}
+
+                        @endif
                 </div>
                 </div>
             </div>

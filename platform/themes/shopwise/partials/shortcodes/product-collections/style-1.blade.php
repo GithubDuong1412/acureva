@@ -5,6 +5,9 @@
                 <div class="heading_s2">
                     <h2 class="h4">{!! BaseHelper::clean($shortcode->title) !!}</h2>
                 </div>
+                @if ($shortcode->description)
+                    <p class="text-center">{!! BaseHelper::clean($shortcode->description) !!}</p>
+                @endif
                 <div class="tab-style2">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#tabmenubar" aria-expanded="false">
                         <span class="ion-android-menu"></span>

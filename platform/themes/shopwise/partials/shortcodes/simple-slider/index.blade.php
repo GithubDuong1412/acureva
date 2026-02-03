@@ -6,7 +6,7 @@
         }
         $collapsingProductCategories = $collapsingProductCategories == 'no';
         $style = $shortcode->style;
-        if (! in_array($style, ['style-1', 'style-2', 'style-2-dk_custom', 'style-3', 'style-4', 'style-5', 'style-6'])) {
+        if (! in_array($style, ['style-1', 'style-2', 'style-2-dk_custom', 'style-3', 'style-4', 'style-5', 'style-6', 'style-7-dk'])) {
             $style = 'style-1';
         }
         Theme::set('collapsingProductCategories', $collapsingProductCategories);

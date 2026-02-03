@@ -13,6 +13,7 @@ class ProductCategoryRequest extends Request
         return [
             'name' => ['required', 'string', 'max:250'],
             'description' => ['nullable', 'string', 'max:100000'],
+            'product_detail_content' => ['nullable', 'string', 'max:100000'],
             'image' => ['nullable', 'string', 'max:255'],
             'parent_id' => [
                 'nullable',

@@ -6,11 +6,14 @@
 			$itemsTablet = (int) ($shortcode->items_tablet ?: 3);
 			$itemsMobile = (int) ($shortcode->items_mobile ?: 2);
 		@endphp
-        <div class="row justify-content-center">
-			<div class="col-md-6">
-            	<div class="heading_s1 text-center">
+        <div class="row justify-content-center bg-dark-dk">
+			<div class="col-md-9">
+            	<div class="heading_s4 text-center">
                 	<h2>{!! BaseHelper::clean($shortcode->title) !!}</h2>
                 </div>
+                @if ($shortcode->description)
+					<p class="text-center">{!! BaseHelper::clean($shortcode->description) !!}</p>
+				@endif
             </div>
 		</div>
         <div class="row">

@@ -1,7 +1,3 @@
-.ck-content ul {
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
 .heading-section .page-title {
 font-size: 36px;
     font-weight: 600;
@@ -111,5 +107,152 @@ margin-bottom: 0px;
    }
   .section-transparency_care, .section-our_commitment {
        padding: 30px 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+.section-feature-collection .row > div.col:first-child {
+	padding-bottom: 30px;
+}
+.feature-collection-side-block {
+	position: sticky;
+	top: 140px;
+	padding: 40px 20px;
+	background-color: #e9e9e9;
+	border-radius: 8px;
+    box-shadow: 4px 4px 12px 4px var(--color-1st);
+}
+
+.feature-collection-side-block img {
+	border-radius: 120px
+}
+@media screen and (max-width: 768px) {
+  .section-feature-collection .row > div.col:first-child {
+  		padding-left: 24px;
+  		padding-right: 24px;
+    	padding-bottom: 40px;
+  }
+  .feature-collection-side-block {
+  		box-shadow: none;
+    	border: 1px solid var(--color-1st);
+  }
+}
+
+
+
+.dk-product-collection-1 .row:nth-child(2) {
+	background-color: #3c3c3c;
+	margin-top: 70px;
+  	border-radius: 50px / 120px;
+  	padding-bottom: 50px;
+}
+
+.dk-product-collection-1 .row:nth-child(2) .tab-style1 {
+	margin-top: -60px;
+}
+
+
+
+.btn-list .btn-icon, .btn-group .btn-icon {      
+    min-width: 80px !important;
+    min-height: 40px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Key Facts Card - Cows Corner style */
+.key-facts-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 400px;
+  background: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin: 0 auto;
+}
+
+.card-title {
+  margin: 0 0 24px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.45;
+  color: #444;
+}
+
+.tick-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tick-item {
+  font-size: 15px;
+  color: #2e7d32;
+  font-weight: 500;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .key-facts-card {
+    padding: 18px;
+    border-radius: 10px;
+  }
+  
+  .card-title {
+    font-size: 18px;
+  }
+  
+  .section-title {
+    font-size: 16px;
+  }
+  
+  .section-text,
+  .tick-item {
+    font-size: 14px;
   }
 }
